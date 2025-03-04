@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-
 <html lang="it">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accesso Protetto</title>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Checklist Interattiva COAVIO</title>
     <style>
-        <style>
+
         #emergenza-list {
             display: flex;
             flex-direction: column;
@@ -219,73 +221,7 @@
         z-index: 1000;
     }
     </style>
-    </style>
-    <style>
-    #emergenza-list {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        margin: 0;
-        padding: 0;
-    }
 
-    #emergenza-list li {
-        list-style: none;
-    }
-
-    #emergenza-list li a {
-        display: inline-block;
-        padding: 15px 30px;
-        font-size: 18px;
-        font-weight: bold;
-        color: white;
-        background: linear-gradient(to bottom, #ff4d4d, #b30000);
-        border: 3px solid #800000;
-        border-radius: 20px;
-        text-decoration: none;
-        text-shadow: none;
-        box-shadow: none;
-        transition: all 0.3s ease;
-    }
-
-    #emergenza-list li a:hover {
-        background: linear-gradient(to bottom, #b30000, #800000);
-        transform: translateY(-2px);
-        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4);
-    }
-
-    margin: 15px 0;
-}
-
-.cover-title {
-    font-size: 200px;
-    /* Even larger */
-    font-weight: bold;
-    color: #fff;
-    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.9);
-    font-size: 50px;
-    /* Larger font size */
-    font-weight: bold;
-    color: #fff;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-}
-
-.cover-subtitle {
-    font-size: 150px;
-    /* Larger subtitle */
-    font-weight: bold;
-    color: #fff;
-    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.9);
-    font-size: 40px;
-    /* Much larger font size */
-    font-weight: bold;
-    color: #fff;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-    margin-top: 15px;
-}
-</style>
     <style>
     .footer {
         position: fixed;
@@ -300,1660 +236,1648 @@
         z-index: 1000;
     }
     </style>
+    <style>
+
+
+.cover-title {
+    font-size: 50px;
+    /* Larger font size */
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.cover-subtitle {
+    font-size: 40px;
+    /* Much larger font size */
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    margin-top: 15px;
+}
+</style>
 </head>
 <body>
-    <!-- Copertina -->
-    <div class="cover">
-        <div class="cover-title">CHECK-LIST COAVIO DF 2000 EOLO</div>
-        <div class="cover-subtitle">GIUSEPPE-FRANCESCO-FEDERICO</div>
-        <a class="enter-button" href="#sezioni">Entra</a>
-        <div class="cover-footer" style="text-align: center; margin-top: 20px; font-size: 30px; color: #fff;">Creato ed ideato da GJS</div>
+    <div id="login">
+        <h1>Inserisci la password</h1>
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="checkPassword()">Accedi</button>
     </div>
-    <!-- Sezioni -->
-    <div class="section" id="sezioni">
-        <h1 class="section-title">Sezioni della Checklist</h1>
-        <ul>
-            <li>
-                <a class="menu-item" href="#informazioni" id="informazioni-item">Informazioni Generali</a>
-            </li>
-            <li>
-                <a class="menu-item" href="#prevolo" id="prevolo-item">Controlli Pre-volo</a>
-            </li>
-            <li>
-                <a class="menu-item" href="#esterni" id="esterni-item">Controlli Esterni</a>
-            </li>
-            <li>
-                <a class="menu-item" href="#avviamento" id="avviamento-item">Avviamento</a>
-            </li>
-            <li>
-                <a class="menu-item" href="#rullaggio" id="rullaggio-item">Rullaggio</a>
-            </li>
-            <li>
-                <a class="menu-item" href="#attesa" id="attesa-item">Punto Attesa</a>
-            </li>
-            <li>
-                <a class="menu-item" href="#decollo" id="decollo-item">Decollo e Salita</a>
-            </li>
-            <li>
-                <a class="menu-item" href="#crociera" id="crociera-item">Crociera</a>
-            </li>
-            <li>
-                <a class="menu-item" href="#sottovento" id="sottovento-item">Sottovento</a>
-            </li>
-            <li>
-                <a class="menu-item" href="#base" id="base-item">Base</a>
-            </li>
-            <li>
-                <a class="menu-item" href="#finale" id="finale-item">Finale</a>
-            </li>
-            <li>
-                <a class="menu-item" href="#riattaccata" id="riattaccata-item"> Riattaccata</a>
-            </li>
-            <li>
-                <a class="menu-item" href="#parcheggio" id="parcheggio-item">Parcheggio e Spegnimento</a>
-            </li>
-            <li>
-                <a class="menu-item menu-item-red" href="#emergenza" id="emergenza-item">Procedure di Emergenza</a>
-            </li>
-        </ul>
-        <button class="reset-all-button" onclick="resetAll()">Azzera Tutto</button>
-    </div>
-    <div class="section" id="informazioni">
-        <h2 class="section-title">Informazioni Generali</h2>
-        <h3>Frequenze Utili</h3>
-        <ul>
-            <li>
-                Calvisano Radio: 
-                <strong>130.000</strong>
-            </li>
-            <li>
-                Milano Radar: 
-                <strong>135.900</strong>
-            </li>
-            <li>
-                Milano Information: 
-                <strong>124.925</strong>
-            </li>
-            <li>
-                Codice transponder FMC: 
-                <strong>4613 IN ASCOLTO 124.925</strong>
-            </li>
-            <li>
-                Codice transponder FMC: 
-                <strong>4611 IN ASCOLTO 126.300</strong>
-            </li>
-            <li>
-                Montichiari Torre: 
-                <strong>119.405</strong>
-            </li>
-        </ul>
-        <h3>Liquidi</h3>
-        <h4>Carburante</h4>
-        <ul>
-            <li>MOGAS</li>
-            <li>MOGAS SUPER</li>
-            <li>AVGAS 100 LL (solo se necessario)</li>
-            <li>2 Serbatoi alari da 50L</li>
-        </ul>
-        <h4>Olio</h4>
-        <ul>
-            <li>Aeroshell Sport Plus 4</li>
-            <li>
-                Quantità: 
-                <strong>3L</strong>
-            </li>
-        </ul>
-        <h4>Liquido Refrigerante</h4>
-        <ul>
-            <li>Glicole per radiatore rosso</li>
-        </ul>
-        <h3>Pilota in Comando</h3>
-        <p>
-                    Quando a bordo ci sono due piloti brevettati, prima del volo devono stabilire chi è il
-                    pilota in comando.
-                </p>
-        <h3>Briefing Passeggero</h3>
-        <p>
-                    Fornire un appropriato briefing al passeggero prima di salire a bordo dell'aereo.
-                </p>
-        <h3>Trasferimento dei Comandi</h3>
-        <p>
-                    Durante il volo, utilizzare la procedura standard per trasferire i comandi dal pilota al:
-                </p>
-        <ul>
-            <li>A: "Tu hai i comandi"</li>
-            <li>B: "Io ho i comandi"</li>
-            <li>A: "Tu hai i comandi"</li>
-        </ul>
-        <h3>Allinearsi e Mantenere Posizione in Pista</h3>
-        <p>
-                    In fase di decollo su campi di volo o aeroporti non controllati non è consentito
-                    attendere allineati in pista. Eseguire tutti i controlli al punto attesa in modo da
-                    occupare la pista il minor tempo possibile.
-                </p>
-        <h3>Riattaccata</h3>
-        <p>
-                    Eseguire la riattaccata quando necessario. Se il finale non risulta ottimale per l' atterraggio, se l' atterraggio è discutibile o se si ha superato 1/3 di pista
-        LA RIATTACCATA E' SEMPRE LA MIGLIORE OPZIONE.
-        <h3>AREA DI SICUREZZA</h3>
-        <p>
+
+    <div id="content" style="display:none;">
+        <!-- Copertina -->
+        <div class="cover">
+            <div class="cover-title">CHECK-LIST COAVIO DF 2000 EOLO</div>
+            <div class="cover-subtitle">GIUSEPPE-FRANCESCO-FEDERICO</div>
+            <a class="enter-button" href="#sezioni">Entra</a>
+            <div class="cover-footer" style="text-align: center; margin-top: 20px; font-size: 30px; color: #fff;">Creato ed ideato da GJS</div>
+        </div>
+        <!-- Sezioni -->
+        <div class="section" id="sezioni">
+            <h1 class="section-title">Sezioni della Checklist</h1>
+            <ul>
+                <li>
+                    <a class="menu-item" href="#informazioni" id="informazioni-item">Informazioni Generali</a>
+                </li>
+                <li>
+                    <a class="menu-item" href="#prevolo" id="prevolo-item">Controlli Pre-volo</a>
+                </li>
+                <li>
+                    <a class="menu-item" href="#esterni" id="esterni-item">Controlli Esterni</a>
+                </li>
+                <li>
+                    <a class="menu-item" href="#avviamento" id="avviamento-item">Avviamento</a>
+                </li>
+                <li>
+                    <a class="menu-item" href="#rullaggio" id="rullaggio-item">Rullaggio</a>
+                </li>
+                <li>
+                    <a class="menu-item" href="#attesa" id="attesa-item">Punto Attesa</a>
+                </li>
+                <li>
+                    <a class="menu-item" href="#decollo" id="decollo-item">Decollo e Salita</a>
+                </li>
+                <li>
+                    <a class="menu-item" href="#crociera" id="crociera-item">Crociera</a>
+                </li>
+                <li>
+                    <a class="menu-item" href="#sottovento" id="sottovento-item">Sottovento</a>
+                </li>
+                <li>
+                    <a class="menu-item" href="#base" id="base-item">Base</a>
+                </li>
+                <li>
+                    <a class="menu-item" href="#finale" id="finale-item">Finale</a>
+                </li>
+                <li>
+                    <a class="menu-item" href="#riattaccata" id="riattaccata-item"> Riattaccata</a>
+                </li>
+                <li>
+                    <a class="menu-item" href="#parcheggio" id="parcheggio-item">Parcheggio e Spegnimento</a>
+                </li>
+                <li>
+                    <a class="menu-item menu-item-red" href="#emergenza" id="emergenza-item">Procedure di Emergenza</a>
+                </li>
+            </ul>
+            <button class="reset-all-button" onclick="resetAll()">Azzera Tutto</button>
+        </div>
+        <div class="section" id="informazioni">
+            <h2 class="section-title">Informazioni Generali</h2>
+            <h3>Frequenze Utili</h3>
+            <ul>
+                <li>
+                    Calvisano Radio:
+                    <strong>130.000</strong>
+                </li>
+                <li>
+                    Milano Radar:
+                    <strong>135.900</strong>
+                </li>
+                <li>
+                    Milano Information:
+                    <strong>124.925</strong>
+                </li>
+                <li>
+                    Codice transponder FMC:
+                    <strong>4613 IN ASCOLTO 124.925</strong>
+                </li>
+                <li>
+                    Codice transponder FMC:
+                    <strong>4611 IN ASCOLTO 126.300</strong>
+                </li>
+                <li>
+                    Montichiari Torre:
+                    <strong>119.405</strong>
+                </li>
+            </ul>
+            <h3>Liquidi</h3>
+            <h4>Carburante</h4>
+            <ul>
+                <li>MOGAS</li>
+                <li>MOGAS SUPER</li>
+                <li>AVGAS 100 LL (solo se necessario)</li>
+                <li>2 Serbatoi alari da 50L</li>
+            </ul>
+            <h4>Olio</h4>
+            <ul>
+                <li>Aeroshell Sport Plus 4</li>
+                <li>
+                    Quantità:
+                    <strong>3L</strong>
+                </li>
+            </ul>
+            <h4>Liquido Refrigerante</h4>
+            <ul>
+                <li>Glicole per radiatore rosso</li>
+            </ul>
+            <h3>Pilota in Comando</h3>
+            <p>
+                Quando a bordo ci sono due piloti brevettati, prima del volo devono stabilire chi è il
+                pilota in comando.
+            </p>
+            <h3>Briefing Passeggero</h3>
+            <p>
+                Fornire un appropriato briefing al passeggero prima di salire a bordo dell'aereo.
+            </p>
+            <h3>Trasferimento dei Comandi</h3>
+            <p>
+                Durante il volo, utilizzare la procedura standard per trasferire i comandi dal pilota al:
+            </p>
+            <ul>
+                <li>A: "Tu hai i comandi"</li>
+                <li>B: "Io ho i comandi"</li>
+                <li>A: "Tu hai i comandi"</li>
+            </ul>
+            <h3>Allinearsi e Mantenere Posizione in Pista</h3>
+            <p>
+                In fase di decollo su campi di volo o aeroporti non controllati non è consentito
+                attendere allineati in pista. Eseguire tutti i controlli al punto attesa in modo da
+                occupare la pista il minor tempo possibile.
+            </p>
+            <h3>Riattaccata</h3>
+            <p>
+                Eseguire la riattaccata quando necessario. Se il finale non risulta ottimale per l' atterraggio, se l' atterraggio è discutibile o se si ha superato 1/3 di pista
+                LA RIATTACCATA E' SEMPRE LA MIGLIORE OPZIONE.
+                <h3>AREA DI SICUREZZA</h3>
+                <p>
                     Non è possibile salire o scendere dall' aereo con il motore acceso. Prima di
-        	    accendere l' aereo verificare che l' area circostante sia libera da persone e ostcoli.
+                    accendere l' aereo verificare che l' area circostante sia libera da persone e ostcoli.
                     Quando non necessario le chiavi vanno rimosse dal pannello strumenti
                 </p>
-        <a class="button" href="#sezioni">Torna all'Indice</a>
-        </p>
-        <div class="section-footer" style="text-align: left; margin-top: 20px; font-size: 14px; color: #555;">Creato ed ideato da GJS</div>
+                <a class="button" href="#sezioni">Torna all'Indice</a>
+            </p>
+            <div class="section-footer" style="text-align: left; margin-top: 20px; font-size: 14px; color: #555;">Creato ed ideato da GJS</div>
+        </div>
+
+        <!-- Sezione Controlli Pre-volo -->
+        <div class="section" id="prevolo">
+            <h2 class="section-title" id="prevolo-title">Controlli Pre-volo</h2>
+            <ul id="prevolo-list">
+                <li>
+                    Ispezione cabina check
+                    <button class="button" onclick="markAsCompleted(this, 'prevolo')">Completato</button>
+                </li>
+                <li>
+                    Documenti check
+                    <button class="button" onclick="markAsCompleted(this, 'prevolo')">Completato</button>
+                </li>
+                <li>
+                    Chiave Master rimuovere
+                    <button class="button" onclick="markAsCompleted(this, 'prevolo')">Completato</button>
+                </li>
+                <li>
+                    Magneti DX + SX OFF
+                    <button class="button" onclick="markAsCompleted(this, 'prevolo')">Completato</button>
+                </li>
+                <li>
+                    Gascolator check
+                    <button class="button" onclick="markAsCompleted(this, 'prevolo')">Completato</button>
+                </li>
+                <li>
+                    Cofano aprire
+                    <button class="button" onclick="markAsCompleted(this, 'prevolo')">Completato</button>
+                </li>
+                <li>
+                    Vano motore check
+                    <button class="button" onclick="markAsCompleted(this, 'prevolo')">Completato</button>
+                </li>
+                <li>
+                    Bulloni castello motore check
+                    <button class="button" onclick="markAsCompleted(this, 'prevolo')">Completato</button>
+                </li>
+                <li>
+                    Candele check
+                    <button class="button" onclick="markAsCompleted(this, 'prevolo')">Completato</button>
+                </li>
+                <li>
+                    Tubi benzina check
+                    <button class="button" onclick="markAsCompleted(this, 'prevolo')">Completato</button>
+                </li>
+                <li>
+                    Carburatori check
+                    <button class="button" onclick="markAsCompleted(this, 'prevolo')">Completato</button>
+                </li>
+                <li>
+                    Tubi di scarico check
+                    <button class="button" onclick="markAsCompleted(this, 'prevolo')">Completato</button>
+                </li>
+                <li>
+                    Tubi liquido refrigerante check
+                    <button class="button" onclick="markAsCompleted(this, 'prevolo')">Completato</button>
+                </li>
+                <li>
+                    Livello liquido refrigerante check
+                    <button class="button" onclick="markAsCompleted(this, 'prevolo')">Completato</button>
+                </li>
+                <li>
+                    Livello olio check solo con motore freddo
+                    <button class="button" onclick="markAsCompleted(this, 'prevolo')">Completato</button>
+                </li>
+                <li>
+                    Bulloni elica check
+                    <button class="button" onclick="markAsCompleted(this, 'prevolo')">Completato</button>
+                </li>
+                <li>
+                    Pannello elettrico relè check
+                    <button class="button" onclick="markAsCompleted(this, 'prevolo')">Completato</button>
+                </li>
+            </ul>
+            <div class="back">
+                <a class="button" href="#sezioni">Torna all'Indice</a>
+                <button class="button reset-button" onclick="resetSection('prevolo')">Azzera</button>
+            </div>
+            <div class="section-footer" style="text-align: left; margin-top: 20px; font-size: 14px; color: #555;">Creato ed ideato da GJS</div>
+        </div>
+        <!-- Sezione Controlli Esterni -->
+        <div class="section" id="esterni">
+            <h2 class="section-title" id="esterni-title">Controlli Esterni</h2>
+            <ul id="esterni-list">
+                <li>
+                    Elìca  check
+                    <button class="button" onclick="markAsCompleted(this, 'esterni')">Completato</button>
+                </li>
+                <li>
+                    Ruotino anteriore check
+                    <button class="button" onclick="markAsCompleted(this, 'esterni')">Completato</button>
+                </li>
+                <li>
+                    Vetratura  check
+                    <button class="button" onclick="markAsCompleted(this, 'esterni')">Completato</button>
+                </li>
+                <li>
+                    Cofano check
+                    <button class="button" onclick="markAsCompleted(this, 'esterni')">Completato</button>
+                </li>
+                <li>
+                    Presa statica check
+                    <button class="button" onclick="markAsCompleted(this, 'esterni')">Completato</button>
+                </li>
+                <li>
+                    Ala DX  check
+                    <button class="button" onclick="markAsCompleted(this, 'esterni')">Completato</button>
+                </li>
+                <li>
+                    Faro check
+                    <button class="button" onclick="markAsCompleted(this, 'esterni')">Completato</button>
+                </li>
+                <li>
+                    Avvisatore di stallo check
+                    <button class="button" onclick="markAsCompleted(this, 'esterni')">Completato</button>
+                </li>
+                <li>
+                    Strobo e luci nav check
+                    <button class="button" onclick="markAsCompleted(this, 'esterni')">Completato</button>
+                </li>
+                <li>
+                    Sfiato serbatoio check
+                    <button class="button" onclick="markAsCompleted(this, 'esterni')">Completato</button>
+                </li>
+                <li>
+                    Alettone e trim ₄ check
+                    <button class="button" onclick="markAsCompleted(this, 'esterni')">Completato</button>
+                </li>
+                <li>
+                    Flap check
+                    <button class="button" onclick="markAsCompleted(this, 'esterni')">Completato</button>
+                </li>
+                <li>
+                    Carrello principale DX ₅ check
+                    <button class="button" onclick="markAsCompleted(this, 'esterni')">Completato</button>
+                </li>
+                <li>
+                    Antenne  check
+                    <button class="button" onclick="markAsCompleted(this, 'esterni')">Completato</button>
+                </li>
+                <li>
+                    Fusoliera  check
+                    <button class="button" onclick="markAsCompleted(this, 'esterni')">Completato</button>
+                </li>
+                <li>
+                    Strobo check
+                    <button class="button" onclick="markAsCompleted(this, 'esterni')">Completato</button>
+                </li>
+                <li>
+                    Timone di direzione check
+                    <button class="button" onclick="markAsCompleted(this, 'esterni')">Completato</button>
+                </li>
+                <li>
+                    Impennaggio orizzontale check
+                    <button class="button" onclick="markAsCompleted(this, 'esterni')">Completato</button>
+                </li>
+                <li>
+                    Trim check
+                    <button class="button" onclick="markAsCompleted(this, 'esterni')">Completato</button>
+                </li>
+                <li>
+                    Carrello Principale sx check
+                    <button class="button" onclick="markAsCompleted(this, 'esterni')">Completato</button>
+                </li>
+                <li>
+                    Alettone e Flap sx check
+                    <button class="button" onclick="markAsCompleted(this, 'esterni')">Completato</button>
+                </li>
+                <li>
+                    Strobo luci nav check
+                    <button class="button" onclick="markAsCompleted(this, 'esterni')">Completato</button>
+                </li>
+                <li>
+                    Ala sx
+                    <button class="button" onclick="markAsCompleted(this, 'esterni')">Completato</button>
+                </li>
+                <li>
+                    Copri pitot check
+                    <button class="button" onclick="markAsCompleted(this, 'esterni')">Completato</button>
+                </li>
+                <li>
+                    Faro check
+                    <button class="button" onclick="markAsCompleted(this, 'esterni')">Completato</button>
+                </li>
+                <li>
+                    Vetratura check
+                    <button class="button" onclick="markAsCompleted(this, 'esterni')">Completato</button>
+                </li>
+                <li>
+                    Presa Statica check
+                    <button class="button" onclick="markAsCompleted(this, 'esterni')">Completato</button>
+                </li>
+                <li>
+                    Livello Carburante check
+                    <button class="button" onclick="markAsCompleted(this, 'esterni')">Completato</button>
+                </li>
+                <h3 style="text-align: center;">Verificre il carburante con l' apposita asta dai serbatoi,
+                    Fare riferimento al manuale di volo da pag.39 a pag.42</h3>
+            </ul>
+            <div class="back">
+                <a class="button" href="#sezioni">Torna all'Indice</a>
+                <button class="button reset-button" onclick="resetSection('esterni')">Azzera</button>
+            </div>
+            <div class="section-footer" style="text-align: left; margin-top: 20px; font-size: 14px; color: #555;">Creato ed ideato da GJS</div>
+        </div>
+
+        <div class="section" id="avviamento">
+            <h2 class="section-title" id="avviamento-title">Controlli Avviamento</h2>
+            <ul id="avviamento-list">
+                <li>
+                    SEDILI REGOLATI
+                    <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
+                </li>
+                <li>
+                    CINTURE ALLACCIATE
+                    <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
+                </li>
+                <li>
+                    PORTE CHIUSE
+                    <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
+                </li>
+                <li>
+                    CHIAVE MASTER OFF
+                    <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
+                </li>
+                <li>
+                    MAGNETI SX + DX OFF
+                    <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
+                </li>
+                <li>
+                    FRENO DI PARCHEGGIO INSERITO
+                    <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
+                </li>
+                <li>
+                    RUBINETTI BENZINA APERTI
+                    <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
+                </li>
+                <li>
+                    PARACADUTE SICURA INSERITA
+                    <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
+                </li>
+                <li>
+                    CUFFIE INDOSSATE
+                    <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
+                </li>
+                <li>
+                    CHIAVE MASTER ON
+                    <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
+                </li>
+                <li>
+                    DYNON 1 e 2 ON
+                    <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
+                </li>
+                <li>
+                    ORAMETRO CHECK e PRENDERE NOTA
+                    <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
+                </li>
+                <li>
+                    STROBO ON
+                    <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
+                </li>
+                <li>
+                    POMPA BENZINA ON max 5" poi OFF 0,15-0,5 bar
+                    <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
+                </li>
+            </ul>
+            <h3 style="text-align: center;">AVVIAMENTO A FREDDO</h3>
+            <ul>
+                <li>
+                    MANETTA AL MINIMO
+                    <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
+                </li>
+                <li>
+                    ARIA CARBURATORE ON
+                    <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
+                </li>
+            </ul>
+            <h3 style="text-align: center;">AVVIAMENTO A CALDO</h3>
+            <ul>
+                <li>
+                    MANETTA INSERITA 1cm
+                    <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
+                </li>
+                <li>
+                    ARIA CARBURATORE OFF
+                    <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
+                </li>
+            </ul>
+            <ul id="avviamento-list-2">
+                <li>
+                    MAGNETI SX + DX ON
+                    <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
+                </li>
+                <li>
+                    AREA CIRCOSTANTE LIBERA CHECK
+                    <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
+                </li>
+                <li>
+                    PULSANTE START
+                    <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
+                </li>
+                <li>
+                    ON (Via dall' ELICA!)
+                    <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
+                </li>
+                <li>
+                    MANETTA 2.000 / 2.400 RPM
+                    <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
+                </li>
+                <li>
+                    PRESSIONE OLIO CHECK 2-6 bar
+                    <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
+                </li>
+                <li>
+                    PRESSIONE BENZINA CHECK 0,15-0,5 bar
+                    <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
+                </li>
+                <li>
+                    ARIA CARBURATORE se motore freddo OFF gradualmente
+                    <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
+                </li>
+                <li>
+                    FRIZIONE MANETTA CHECK
+                    <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
+                </li>
+                <li>
+                    RADIO ON e SET
+                    <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
+                </li>
+                <li>
+                    TRASPONDER ON e SET
+                    <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
+                </li>
+                <li>
+                    LUCI NAVIGAZIONE ON
+                    <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
+                </li>
+                <li>
+                    LUCI TAXI ON
+                    <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
+                </li>
+                <li>
+                    LUCI LANDING ON
+                    <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
+                </li>
+                <li>
+                    BREAKERS CHECK
+                    <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
+                </li>
+                <li>
+                    TEMPERATURA OLIO 50° minimo
+                    <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
+                </li>
+                <h3 style="text-align: center;">Rullare a punto attesa e posizionarsi a 45°, velocità massima 4 km/h.
+                    Provare il funzionamento dei freni e il movimento del ruotino anteriore.
+                    Verificare manica a vento</h3>
+            </ul>
+            <a class="button" href="#sezioni">Torna all'Indice</a>
+            <button class="button reset-button" onclick="resetSection('avviamento')">Azzera</button>
+            <div class="section-footer" style="text-align: left; margin-top: 20px; font-size: 14px; color: #555;">Creato ed ideato da GJS</div>
+        </div>
+
+        <!-- Sezione Controlli Rullaggio -->
+        <div class="section" id="rullaggio">
+            <h2 class="section-title" id="rullaggio-title">Controlli Rullaggio</h2>
+            <ul id="rullaggio-list">
+                <li>
+                    Freno check
+                    <button class="button" onclick="markAsCompleted(this, 'rullaggio')">Completato</button>
+                </li>
+                <li>
+                    Manica a Vento check
+                    <button class="button" onclick="markAsCompleted(this, 'rullaggio')">Completato</button>
+                </li>
+                <li>
+                    Bussola check
+                    <button class="button" onclick="markAsCompleted(this, 'rullaggio')">Completato</button>
+                </li>
+                <li>
+                    Orizzonte Artificiale check
+                    <button class="button" onclick="markAsCompleted(this, 'rullaggio')">Completato</button>
+                </li>
+                <li>
+                    Pallina check
+                    <button class="button" onclick="markAsCompleted(this, 'rullaggio')">Completato</button>
+                </li>
+            </ul>
+            <a class="button" href="#sezioni">Torna all'Indice</a>
+            <button class="button reset-button" onclick="resetSection('rullaggio')">Azzera</button>
+            <div class="section-footer" style="text-align: left; margin-top: 20px; font-size: 14px; color: #555;">Creato ed ideato da GJS</div>
+        </div>
+
+        <div class="section" id="attesa">
+            <h2 class="section-title" id="attesa-title">Controlli Punto Attesa</h2>
+            <ul id="attesa-list">
+                <li>
+                    FRENO ON
+                    <button class="button" onclick="markAsCompleted(this, 'attesa')">Completato</button>
+                </li>
+                <li>
+                    PORTE CHIUSE
+                    <button class="button" onclick="markAsCompleted(this, 'attesa')">Completato</button>
+                </li>
+                <li>
+                    CINTURE ALLACCIATE
+                    <button class="button" onclick="markAsCompleted(this, 'attesa')">Completato</button>
+                </li>
+                <li>
+                    COMANDI LIBERI
+                    <button class="button" onclick="markAsCompleted(this, 'attesa')">Completato</button>
+                </li>
+                <li>
+                    ALTIMETRO SET QNH
+                    <button class="button" onclick="markAsCompleted(this, 'attesa')">Completato</button>
+                </li>
+                <li>
+                    TRIM SET PER DECOLLO
+                    <button class="button" onclick="markAsCompleted(this, 'attesa')">Completato</button>
+                </li>
+                <li>
+                    FLAP 15°
+                    <button class="button" onclick="markAsCompleted(this, 'attesa')">Completato</button>
+                </li>
+                <li>
+                    PARACADUTE RIMUOVERE SICURA
+                    <button class="button" onclick="markAsCompleted(this, 'attesa')">Completato</button>
+                </li>
+                <li>
+                    OLIO PRESSIONE CHECK 2-6 bar
+                    <button class="button" onclick="markAsCompleted(this, 'attesa')">Completato</button>
+                </li>
+                <li>
+                    OLIO TEMPERATURA CHECK 60°C min.
+                    <button class="button" onclick="markAsCompleted(this, 'attesa')">Completato</button>
+                </li>
+                <li>
+                    CHT TEMPERATURA CHECK 60°C min.
+                    <button class="button" onclick="markAsCompleted(this, 'attesa')">Completato</button>
+                </li>
+                <li>
+                    PROVA MAGNETI CHECK 3800 RPM calo 300 diff. 120
+                    <button class="button" onclick="markAsCompleted(this, 'attesa')">Completato</button>
+                </li>
+                <li>
+                    MANICA A VENTO CHECK
+                    <button class="button" onclick="markAsCompleted(this, 'attesa')">Completato</button>
+                </li>
+                <li>
+                    TESTATE PISTA LIBERE CHECK
+                    <button class="button" onclick="markAsCompleted(this, 'attesa')">Completato</button>
+                </li>
+                <li>
+                    LIVELLO BENZINA CHECK
+                    <button class="button" onclick="markAsCompleted(this, 'attesa')">Completato</button>
+                </li>
+                <li>
+                    POMPA BENZINA ON 0,15-0,5 bar
+                    <button class="button" onclick="markAsCompleted(this, 'attesa')">Completato</button>
+                </li>
+                <li>
+                    BRIEFING DECOLLO ESEGUIRE CHECK
+                    <button class="button" onclick="markAsCompleted(this, 'attesa')">Completato</button>
+                </li>
+                <li>
+                    CHIAMATA RADIO ESEGUIRE
+                    <button class="button" onclick="markAsCompleted(this, 'attesa')">Completato</button>
+                </li>
+                <h3 style="text-align: center;">BRIEFING DECOLLO</h3>
+                <h3 style="text-align: center;">
+                    IN CASO DI PIANTATA MOTORE O CALO DI GIRI:
+                    ∙SE IL VELIVOLO E' ANCORA IN PISTA MOTORE AL MINIMO, FRENARE CON
+                    DECISIONE E LIBERARE LA PISTA.
+                    ∙SE GIA' DECOLLATI MA CON PISTA SUFFICIENTE MOTORE AL MINIMO, ATTERRARE
+                    E RIPETERE L' OPERAZIONE PRECEDENTE.
+                    ∙SE GIA' DECOLLATI E FUORI DALLA PISTA SOTTO I 700 FT AGL PORTARE CON
+                    DECISIONE IL VELIVOLO IN DISCESA, TENERE LA PRUA O VIRARE MASSIMO 30° DX E
+                    SX PER TROVARE UN CAMPO PER L' ATTERRRAGGIO.
+                    <h3 style="text-align: center;">NON RIENTRARE IN PISTA</h3>
+
+                    SE GIA DECOLLATI E SOPRA I 700 FT AGL PORTARE CON DECISIONE IL VELIVOLO IN
+                    DISCESA E MANTENERE LA VELOCITA' DI MASSIMA EFFICIENZA (110 KM/H). SE LE
+                    CONDIZIONI LO PERMETTONO TENTARE IL CAPPIO A 180° PER IL RIENTRO IN
+                    CAMPO CON VIRATE NON ACCENTUATE. ALTRIMENTI CERCARE UN CAMPO
+                    ALTERNATIVO.
+                </h3>
+                <h3 style="text-align: center;">
+                    IN CASO DI MALESSERE DEL PILOTA:
+                    SE IN VOLO IL PASSEGGERO DEVE PORTARE IL MOTORE AL MINIMO, SPEGNERE IL
+                    MOTORE, AZIONARE IL PARACADUTE E PREPARARSI ALL' IMPATTO. UNA VOLTA A
+                    TERRA LIBERARE L' AEREO, ALLONTANARSI DIETRO E CHIAMARE I SOCCORSI.
+                    <h3 style="text-align: center;">IN CASO DI EMERGENZA A TERRA:
+                        SU INDICAZIONE DEL PILOTA, IL PASSEGGERO DEVE LIBERARE L' AEREO,
+                        ALLONTANARSI DIETRO.
+            </ul>
+            <a class="button" href="#sezioni">Torna all'Indice</a>
+            <button class="button reset-button" onclick="resetSection('attesa')">Azzera</button>
+            <div class="section-footer" style="text-align: left; margin-top: 20px; font-size: 14px; color: #555;">Creato ed ideato da GJS</div>
+        </div>
+
+        <div class="section" id="decollo">
+            <h2 class="section-title" id="decollo-title">Controlli Decollo e Salita</h2>
+            <ul id="decollo-list">
+                <li>
+                    MANETTA MAX
+                    <button class="button" onclick="markAsCompleted(this, 'decollo')">Completato</button>
+                </li>
+                <li>
+                    CLOCHE A CABRARE - RUOTINO SOLLEVATO
+                    <button class="button" onclick="markAsCompleted(this, 'decollo')">Completato</button>
+                </li>
+                <li>
+                    VELOCITÀ DI ROTAZIONE 80 KM/H
+                    <button class="button" onclick="markAsCompleted(this, 'decollo')">Completato</button>
+                </li>
+                <li>
+                    FRENO UN COLPO DOPO DECOLLO
+                    <button class="button" onclick="markAsCompleted(this, 'decollo')">Completato</button>
+                </li>
+                <li>
+                    VELOCITA DI SALITA VY 110 KM/H
+                    <button class="button" onclick="markAsCompleted(this, 'decollo')">Completato</button>
+                </li>
+                <h3 style="text-align: center;">QUOTA DI SICUREZZA 300FT AGL</h3>
+                <li>
+                    POMPA BENZINA OFF
+                    <button class="button" onclick="markAsCompleted(this, 'decollo')">Completato</button>
+                </li>
+                <li>
+                    VELOCITA DI SALITA 120 KM/H
+                    <button class="button" onclick="markAsCompleted(this, 'decollo')">Completato</button>
+                </li>
+                <li>
+                    FLAP UP
+                    <button class="button" onclick="markAsCompleted(this, 'decollo')">Completato</button>
+                </li>
+                <li>
+                    LUCI LANDING OFF
+                    <button class="button" onclick="markAsCompleted(this, 'decollo')">Completato</button>
+                </li>
+                <li>
+                    LUCI TAXI OFF
+                    <button class="button" onclick="markAsCompleted(this, 'decollo')">Completato</button>
+                </li>
+                <li>
+                    MOTORE 4800-5000 RPM
+                    <button class="button" onclick="markAsCompleted(this, 'decollo')">Completato</button>
+                </li>
+                <h3 style="text-align: center;">PARAMETRI DI VOLO</h3>
+                <li>
+                    ROTAZIONE 80 KM/H
+                    <button class="button" onclick="markAsCompleted(this, 'decollo')">Completato</button>
+                </li>
+                <li>
+                    SALITA RAPIDA Vy 110 KM/H
+                    <button class="button" onclick="markAsCompleted(this, 'decollo')">Completato</button>
+                </li>
+                <li>
+                    SALITA RIPIDA Vx 90 KM/H
+                    <button class="button" onclick="markAsCompleted(this, 'decollo')">Completato</button>
+                </li>
+                <li>
+                    RPM MAX 5'
+                    <button class="button" onclick="markAsCompleted(this, 'decollo')">Completato</button>
+                </li>
+                <li>
+                    CHT 90-135°C
+                    <button class="button" onclick="markAsCompleted(this, 'decollo')">Completato</button>
+                </li>
+                <li>
+                    TEMPERATURA OLIO 50-130°C
+                    <button class="button" onclick="markAsCompleted(this, 'decollo')">Completato</button>
+                </li>
+                <li>
+                    PRESSIONE OLIO 2-6 bar
+                    <button class="button" onclick="markAsCompleted(this, 'decollo')">Completato</button>
+                </li>
+                <li>
+                    VENTO CONTRARIO MAX 28 KM/H
+                    <button class="button" onclick="markAsCompleted(this, 'decollo')">Completato</button>
+                </li>
+                <li>
+                    VENTO AL TRAVERSO MAX 28 KM/H
+                    <button class="button" onclick="markAsCompleted(this, 'decollo')">Completato</button>
+                </li>
+            </ul>
+            <a class="button" href="#sezioni">Torna all'Indice</a>
+            <button class="button reset-button" onclick="resetSection('decollo')">Azzera</button>
+            <div class="section-footer" style="text-align: left; margin-top: 20px; font-size: 14px; color: #555;">Creato ed ideato da GJS</div>
+        </div>
+        <div class="section" id="crociera">
+            <h2 class="section-title" id="crociera-title">Controlli Crociera</h2>
+            <ul id="crociera-list">
+                <h3 style="text-align: center;">PARAMETRI DI VOLO</h3>
+                <li>
+                    ECONOMICA:
+                    <strong>4500rpm 16l/h</strong>
+                </li>
+                <li>
+                    NORMALE:
+                    <strong>4800rpm 18l/h</strong>
+                </li>
+                <li>
+                    VELOCE:
+                    <strong>5009rpm 20l/h</strong>
+                </li>
+                <li>
+                    CHT:
+                    <strong>90-135°C</strong>
+                </li>
+                <li>
+                    TEMPERATURA OLIO:
+                    <strong>50-130°C</strong>
+                </li>
+                <li>
+                    PRESSIONE OLIO:
+                    <strong>2-6 bar</strong>
+                </li>
+                <li>
+                    VELOCITÀ DI MANOVRA:
+                    <strong>160 KM/H</strong>
+                </li>
+                <li>
+                    VELOCITÀ CROCIERA ECONOMICA:
+                    <strong>160 KM/H</strong>
+                </li>
+                <li>
+                    VELOCITÀ DI CROCIERA NORMALE:
+                    <strong>190 KM/H</strong>
+                </li>
+                <li>
+                    VELOCITÀ DI CROCIERA VELOCE:
+                    <strong>210 KM/H</strong>
+                </li>
+                <li>
+                    VELOCITÀ DA NON SUPERARE (VNE):
+                    <strong>240 KM/H</strong>
+                </li>
+                <li>
+                    VELOCITÀ VENTO A TRAVERSO:
+                    <strong>28 KM/H</strong>
+                </li>
+            </ul>
+            <a class="button" href="#sezioni">Torna all'Indice</a>
+            <button class="button reset-button" onclick="resetSection('crociera')">Azzera</button>
+            <div class="section-footer" style="text-align: left; margin-top: 20px; font-size: 14px; color: #555;">Creato ed ideato da GJS</div>
+        </div>
+        <div class="section" id="sottovento">
+            <h2 class="section-title" id="sottovento-title">Controlli Sottovento</h2>
+            <ul id="sottovento-list">
+                <li>
+                    PARAMETRI MOTORE CHECK
+                    <button class="button" onclick="markAsCompleted(this, 'sottovento')">Completato</button>
+                </li>
+                <li>
+                    VELOCITÀ <120 KM/H
+                    <button class="button" onclick="markAsCompleted(this, 'sottovento')">Completato</button>
+                </li>
+                <li>
+                    FLAP 15°
+                    <button class="button" onclick="markAsCompleted(this, 'sottovento')">Completato</button>
+                </li>
+                <li>
+                    TRIM SET PER DISCESA
+                    <button class="button" onclick="markAsCompleted(this, 'sottovento')">Completato</button>
+                </li>
+                <li>
+                    FARO ATTERAGGIO ON
+                    <button class="button" onclick="markAsCompleted(this, 'sottovento')">Completato</button>
+                </li>
+                <li>
+                    POMPA BENZINA ON
+                    <button class="button" onclick="markAsCompleted(this, 'sottovento')">Completato</button>
+                </li>
+                <li>
+                    FRENO CHECK OFF
+                    <button class="button" onclick="markAsCompleted(this, 'sottovento')">Completato</button>
+                </li>
+            </ul>
+            <a class="button" href="#sezioni">Torna all'Indice</a>
+            <button class="button reset-button" onclick="resetSection('sottovento')">Azzera</button>
+            <div class="section-footer" style="text-align: left; margin-top: 20px; font-size: 14px; color: #555;">Creato ed ideato da GJS</div>
+        </div>
+        <div class="section" id="base">
+            <h2 class="section-title" id="base-title">Controlli Base</h2>
+            <ul id="base-list">
+                <li>
+                    VELOCITÀ 110 KM/H
+                    <button class="button" onclick="markAsCompleted(this, 'base')">Completato</button>
+                </li>
+                <li>
+                    FLAP 20°
+                    <button class="button" onclick="markAsCompleted(this, 'base')">Completato</button>
+                </li>
+                <li>
+                    TRIM SET
+                    <button class="button" onclick="markAsCompleted(this, 'base')">Completato</button>
+                </li>
+            </ul>
+            <a class="button" href="#sezioni">Torna all'Indice</a>
+            <button class="button reset-button" onclick="resetSection('base')">Azzera</button>
+            <div class="section-footer" style="text-align: left; margin-top: 20px; font-size: 14px; color: #555;">Creato ed ideato da GJS</div>
+        </div>
+        <div class="section" id="finale">
+            <h2 class="section-title" id="finale-title">Controlli Finale</h2>
+            <ul id="finale-list">
+                <li>
+                    VELOCITÀ 90 KM/H
+                    <button class="button" onclick="markAsCompleted(this, 'finale')">Completato</button>
+                </li>
+                <li>
+                    FLAP 30-50°
+                    <button class="button" onclick="markAsCompleted(this, 'finale')">Completato</button>
+                </li>
+                <li>
+                    TRIM SET PER DISCESA
+                    <button class="button" onclick="markAsCompleted(this, 'finale')">Completato</button>
+                </li>
+            </ul>
+            <a class="button" href="#sezioni">Torna all'Indice</a>
+            <button class="button reset-button" onclick="resetSection('finale')">Azzera</button>
+            <div class="section-footer" style="text-align: left; margin-top: 20px; font-size: 14px; color: #555;">Creato ed ideato da GJS</div>
+        </div>
+        <div class="section" id="riattaccata">
+            <h2 class="section-title" id="riattaccata-title">Controlli Riattaccata </h2>
+            <ul id="riattaccata-list">
+                <h3 style="text-align: center;">MANTENERE QUOTA DI SICUREZZA</h3>
+                <li>
+                    TUTTA POTENZA ED ASSETTO A CABRARE ESEGUIRE
+                    <button class="button" onclick="markAsCompleted(this, 'riattaccata')">Completato</button>
+                </li>
+                <li>
+                    FLAP 15°
+                    <button class="button" onclick="markAsCompleted(this, 'riattaccata')">Completato</button>
+                </li>
+                <li>
+                    PROCEDURA COME DECOLLO ESEGUIRE
+                    <button class="button" onclick="markAsCompleted(this, 'riattaccata')">Completato</button>
+                </li>
+                <a class="button" href="#sezioni">Torna all'Indice</a>
+                <button class="button reset-button" onclick="resetSection('riattaccata')">Azzera</button>
+            </ul>
+            <div class="section-footer" style="text-align: left; margin-top: 20px; font-size: 14px; color: #555;">Creato ed ideato da GJS</div>
+        </div>
+        <div class="section" id="parcheggio">
+            <h2 class="section-title" id="parcheggio-title">Controlli Parcheggio e Spegnimento</h2>
+            <ul id="parcheggio-list">
+                <li>
+                    FRENO PARCHEGGIO ON
+                    <button class="button" onclick="markAsCompleted(this, 'parcheggio')">Completato</button>
+                </li>
+                <li>
+                    FLAP UP
+                    <button class="button" onclick="markAsCompleted(this, 'parcheggio')">Completato</button>
+                </li>
+                <li>
+                    PARAMETRI MOTORE CHECK
+                    <button class="button" onclick="markAsCompleted(this, 'parcheggio')">Completato</button>
+                </li>
+                <li>
+                    ORAMETRO CHECK E PRENDERE NOTA
+                    <button class="button" onclick="markAsCompleted(this, 'parcheggio')">Completato</button>
+                </li>
+                <li>
+                    POMPA BENZINA OFF
+                    <button class="button" onclick="markAsCompleted(this, 'parcheggio')">Completato</button>
+                </li>
+                <li>
+                    LUCI LANDING OFF
+                    <button class="button" onclick="markAsCompleted(this, 'parcheggio')">Completato</button>
+                </li>
+                <li>
+                    LUCI TAXI OFF
+                    <button class="button" onclick="markAsCompleted(this, 'parcheggio')">Completato</button>
+                </li>
+                <li>
+                    LUCI NAVIGAZIONE OFF
+                    <button class="button" onclick="markAsCompleted(this, 'parcheggio')">Completato</button>
+                </li>
+                <li>
+                    RADIO E TRANSPONDER OFF
+                    <button class="button" onclick="markAsCompleted(this, 'parcheggio')">Completato</button>
+                </li>
+                <li>
+                    DYNON 1 e 2 OFF
+                    <button class="button" onclick="markAsCompleted(this, 'parcheggio')">Completato</button>
+                </li>
+                <li>
+                    MAGNETI DX + SX OFF
+                    <button class="button" onclick="markAsCompleted(this, 'parcheggio')">Completato</button>
+                </li>
+                <li>
+                    LUCI STROBO OFF
+                    <button class="button" onclick="markAsCompleted(this, 'parcheggio')">Completato</button>
+                </li>
+                <li>
+                    CHIAVE MASTER OFF
+                    <button class="button" onclick="markAsCompleted(this, 'parcheggio')">Completato</button>
+                </li>
+                <li>
+                    INTERRUTTORI CHECK OFF
+                    <button class="button" onclick="markAsCompleted(this, 'parcheggio')">Completato</button>
+                </li>
+                <li>
+                    BREAKERS CHECK
+                    <button class="button" onclick="markAsCompleted(this, 'parcheggio')">Completato</button>
+                </li>
+                <li>
+                    COPRI PITOT ON
+                    <button class="button" onclick="markAsCompleted(this, 'parcheggio')">Completato</button>
+                </li>
+                <li>
+                    ELICA, VETRATURE... PULIRE
+                    <button class="button" onclick="markAsCompleted(this, 'parcheggio')">Completato</button>
+                </li>
+                <h3 style="text-align: center;">ANCORAGGIO AEREO</h3>
+                <li>
+                    FRENARE E TOGLIERE CHIAVE CHECK
+                    <button class="button" onclick="markAsCompleted(this, 'parcheggio')">Completato</button>
+                </li>
+                <li>
+                    LUCCHETTO LEVA PARACADUTE CHECK
+                    <button class="button" onclick="markAsCompleted(this, 'parcheggio')">Completato</button>
+                </li>
+                <li>
+                    BLOCCARE CLOCHE E CHIUDERE PORTE CHECK
+                    <button class="button" onclick="markAsCompleted(this, 'parcheggio')">Completato</button>
+                </li>
+                <li>
+                    METTERE CEPPI CHECK
+                    <button class="button" onclick="markAsCompleted(this, 'parcheggio')">Completato</button>
+                </li>
+                <li>
+                    BLOCCARE FLAP E ALETTONI CHECK
+                    <button class="button" onclick="markAsCompleted(this, 'parcheggio')">Completato</button>
+                </li>
+                <li>
+                    ANCORARE ALA A TERRA CHECK
+                    <button class="button" onclick="markAsCompleted(this, 'parcheggio')">Completato</button>
+                </li>
+                <li>
+                    ANCORARE MOZZO ELICA A TERRA CHECK
+                    <button class="button" onclick="markAsCompleted(this, 'parcheggio')">Completato</button>
+                </li>
+                <li>
+                    METTERE TELO DI COPERTURA CHECK
+                    <button class="button" onclick="markAsCompleted(this, 'parcheggio')">Completato</button>
+                </li>
+            </ul>
+            <a class="button" href="#sezioni">Torna all'Indice</a>
+            <button class="button reset-button" onclick="resetSection('parcheggio')">Azzera</button>
+            <div class="section-footer" style="text-align: left; margin-top: 20px; font-size: 14px; color: #555;">Creato ed ideato da GJS</div>
+        </div>
+        <div class="section" id="emergenza">
+            <h2 class="section-title" id="emergenza-title" style="
+            color: white;
+            text-align: center;
+            background-color: red;
+            padding: 10px;
+            border-radius: 5px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">
+                PROCEDURE DI EMERGENZA
+            </h2>
+            <ul id="emergenza-list" style="list-style: none; padding: 0; text-align: center;">
+                <li style="margin: 10px 0;">
+                    <a class="button" href="#avaria-motore-quota" style="
+                            display: inline-block;
+                            color: white;
+                            background-color: red;
+                            padding: 10px 20px;
+                            border-radius: 5px;
+                            text-decoration: none;
+                            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+                            font-weight: bold;">
+                        AVARIA MOTORE IN QUOTA
+                    </a>
+                </li>
+                <li style="margin: 10px 0;">
+                    <a class="button" href="#avaria-motore-decollo" style="
+                            display: inline-block;
+                            color: white;
+                            background-color: red;
+                            padding: 10px 20px;
+                            border-radius: 5px;
+                            text-decoration: none;
+                            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+                            font-weight: bold;">
+                        AVARIA MOTORE IN DECOLLO
+                    </a>
+                </li>
+                <li style="margin: 10px 0;">
+                    <a class="button" href="#vite-intenzionale" style="
+                            display: inline-block;
+                            color: white;
+                            background-color: red;
+                            padding: 10px 20px;
+                            border-radius: 5px;
+                            text-decoration: none;
+                            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+                            font-weight: bold;">
+                        VITE INTENZIONALE
+                    </a>
+                </li>
+                <li style="margin: 10px 0;">
+                    <a class="button" href="#incendio-motore" style="
+                            display: inline-block;
+                            color: white;
+                            background-color: red;
+                            padding: 10px 20px;
+                            border-radius: 5px;
+                            text-decoration: none;
+                            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+                            font-weight: bold;">
+                        INCENDIO AL MOTORE
+                    </a>
+                </li>
+                <li style="margin: 10px 0;">
+                    <a class="button" href="#incendio-elettrico" style="
+                            display: inline-block;
+                            color: white;
+                            background-color: red;
+                            padding: 10px 20px;
+                            border-radius: 5px;
+                            text-decoration: none;
+                            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+                            font-weight: bold;">
+                        INCENDIO IMPIANTO ELETTRICO
+                    </a>
+                </li>
+                <li style="margin: 10px 0;">
+                    <a class="button" href="#utilizzo-paracadute" style="
+                            display: inline-block;
+                            color: white;
+                            background-color: red;
+                            padding: 10px 20px;
+                            border-radius: 5px;
+                            text-decoration: none;
+                            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+                            font-weight: bold;">
+                        UTILIZZO PARACADUTE
+                    </a>
+                </li>
+                <li style="margin: 10px 0;">
+                    <a class="button" href="#flutter" style="
+                            display: inline-block;
+                            color: white;
+                            background-color: red;
+                            padding: 10px 20px;
+                            border-radius: 5px;
+                            text-decoration: none;
+                            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+                            font-weight: bold;">
+                        FLUTTER
+                    </a>
+                </li>
+                <li style="margin: 10px 0;">
+                    <a class="button" href="#ghiaccio-carburatore" style="
+                            display: inline-block;
+                            color: white;
+                            background-color: red;
+                            padding: 10px 20px;
+                            border-radius: 5px;
+                            text-decoration: none;
+                            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+                            font-weight: bold;">
+                        GHIACCIO AL CARBURATORE
+                    </a>
+                </li>
+                <li style="margin: 10px 0;">
+                    <a class="button" href="#avaria-carburante" style="
+                            display: inline-block;
+                            color: white;
+                            background-color: red;
+                            padding: 10px 20px;
+                            border-radius: 5px;
+                            text-decoration: none;
+                            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+                            font-weight: bold;">
+                        AVARIA IMPIANTO CARBURANTE
+                    </a>
+                </li>
+                <li style="margin: 10px 0;">
+                    <a class="button" href="#superamento-vne" style="
+                            display: inline-block;
+                            color: white;
+                            background-color: red;
+                            padding: 10px 20px;
+                            border-radius: 5px;
+                            text-decoration: none;
+                            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+                            font-weight: bold;">
+                        SUPERAMENTO VNE
+                    </a>
+                </li>
+                <li style="margin: 10px 0;">
+                    <a class="button" href="#guasto-carrello" style="
+                            display: inline-block;
+                            color: white;
+                            background-color: red;
+                            padding: 10px 20px;
+                            border-radius: 5px;
+                            text-decoration: none;
+                            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+                            font-weight: bold;">
+                        GUASTO AL CARRELLO
+                    </a>
+                </li>
+                <li style="margin: 10px 0;">
+                    <a class="button" href="#avaria-elettrico" style="
+                            display: inline-block;
+                            color: white;
+                            background-color: red;
+                            padding: 10px 20px;
+                            border-radius: 5px;
+                            text-decoration: none;
+                            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+                            font-weight: bold;">
+                        AVARIA IMPIANTO ELETTRICO
+                    </a>
+                </li>
+            </ul>
+            <a class="button" href="#sezioni" style="
+            display: inline-block;
+            margin-top: 20px;
+            color: white;
+            background-color: #007bff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);">
+                Torna all'Indice
+            </a>
+        </div>
+        <!-- Sottosezioni -->
+        <div class="subsection" id="avaria-motore-quota">
+            <h3 style="color: red; text-align: center; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">AVARIA MOTORE IN QUOTA</h3>
+            <ul id="avaria-motore-quota-list" style="list-style: none; padding: 0; text-align: left;">
+                <li style="margin: 10px 0;">
+                    VEFF. MAX 110 KM/H
+                    <button class="button" onclick="markAsCompleted(this, 'avaria-motore-quota')">Completato</button>
+                </li>
+                <li style="margin: 10px 0;">
+                    FLAP COME NECESSARIO
+                    <button class="button" onclick="markAsCompleted(this, 'avaria-motore-quota')">Completato</button>
+                </li>
+                <li style="margin: 10px 0;">
+                    LUOGO ATTERRAGGIO SCEGLIERE
+                    <button class="button" onclick="markAsCompleted(this, 'avaria-motore-quota')">Completato</button>
+                </li>
+                <li style="margin: 10px 0;">
+                    SE QUOTA SUFFICIENTE TENTATIVO DI RIAVVIO
+                    <button class="button" onclick="markAsCompleted(this, 'avaria-motore-quota')">Completato</button>
+                </li>
+                <li style="margin: 10px 0;">
+                    RUBINETTI BENZINA APERTI
+                    <button class="button" onclick="markAsCompleted(this, 'avaria-motore-quota')">Completato</button>
+                </li>
+                <li style="margin: 10px 0;">
+                    LIVELLO BENZINA CHECK
+                    <button class="button" onclick="markAsCompleted(this, 'avaria-motore-quota')">Completato</button>
+                </li>
+                <li style="margin: 10px 0;">
+                    POMPA BENZINA ON
+                    <button class="button" onclick="markAsCompleted(this, 'avaria-motore-quota')">Completato</button>
+                </li>
+                <li style="margin: 10px 0;">
+                    MAGNETI DX + SX ON
+                    <button class="button" onclick="markAsCompleted(this, 'avaria-motore-quota')">Completato</button>
+                </li>
+                <li style="margin: 10px 0;">
+                    SE IL MOTORE NON SI RIAVVIA
+                    <button class="button" onclick="markAsCompleted(this, 'avaria-motore-quota')">Completato</button>
+                </li>
+                <li style="margin: 10px 0;">
+                    RUBINETTI BENZINA OFF
+                    <button class="button" onclick="markAsCompleted(this, 'avaria-motore-quota')">Completato</button>
+                </li>
+                <li style="margin: 10px 0;">
+                    MAGNETI DX + SX OFF
+                    <button class="button" onclick="markAsCompleted(this, 'avaria-motore-quota')">Completato</button>
+                </li>
+                <li style="margin: 10px 0;">
+                    CHIAVE MASTER OFF
+                    <button class="button" onclick="markAsCompleted(this, 'avaria-motore-quota')">Completato</button>
+                </li>
+                <li style="margin: 10px 0;">
+                    SBLOCCARE PORTIERE SE OPPORTUNO
+                    <button class="button" onclick="markAsCompleted(this, 'avaria-motore-quota')">Completato</button>
+                </li>
+                <li style="margin: 10px 0;">
+                    ATTERRARE
+                    <button class="button" onclick="markAsCompleted(this, 'avaria-motore-quota')">Completato</button>
+                </li>
+                <li style="margin: 10px 0;">
+                    ALLONTANARSI DALL'AEREO
+                    <button class="button" onclick="markAsCompleted(this, 'avaria-motore-quota')">Completato</button>
+                </li>
+            </ul>
+            <a class="button" href="#emergenza" style="
+            display: inline-block;
+            margin-top: 20px;
+            color: white;
+            background-color: #007bff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);">
+                Torna al Menu Emergenza
+            </a>
+        </div>
+        <div class="subsection" id="avaria-motore-decollo">
+            <h3 style="color: red; text-align: center; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">AVARIA MOTORE IN DECOLLO</h3>
+            <ul id="avaria-motore-decollo-list" style="list-style: none; padding: 0; text-align: left;">
+                <li style="margin: 10px 0;">
+                    LIVELLARE
+                    <button class="button" onclick="markAsCompleted(this, 'avaria-motore-decollo')">Completato</button>
+                </li>
+                <li style="margin: 10px 0;">
+                    VELOCITÀ 90 KM/H
+                    <button class="button" onclick="markAsCompleted(this, 'avaria-motore-decollo')">Completato</button>
+                </li>
+                <li style="margin: 10px 0;">
+                    LUOGO ATTERRAGGIO SCEGLIERE
+                    <button class="button" onclick="markAsCompleted(this, 'avaria-motore-decollo')">Completato</button>
+                </li>
+                <li style="margin: 10px 0;">
+                    MANETTA MINIMO
+                    <button class="button" onclick="markAsCompleted(this, 'avaria-motore-decollo')">Completato</button>
+                </li>
+                <li style="margin: 10px 0;">
+                    RUBINETTI BENZINA OFF
+                    <button class="button" onclick="markAsCompleted(this, 'avaria-motore-decollo')">Completato</button>
+                </li>
+                <li style="margin: 10px 0;">
+                    MAGNETI DX + SX OFF
+                    <button class="button" onclick="markAsCompleted(this, 'avaria-motore-decollo')">Completato</button>
+                </li>
+                <li style="margin: 10px 0;">
+                    MASTER OFF
+                    <button class="button" onclick="markAsCompleted(this, 'avaria-motore-decollo')">Completato</button>
+                </li>
+                <li style="margin: 10px 0;">
+                    ATTERRARE
+                    <button class="button" onclick="markAsCompleted(this, 'avaria-motore-decollo')">Completato</button>
+                </li>
+                <li style="margin: 10px 0;">
+                    ALLONTANARSI DALL'AEREO
+                    <button class="button" onclick="markAsCompleted(this, 'avaria-motore-decollo')">Completato</button>
+                </li>
+            </ul>
+            <a class="button" href="#emergenza" style="
+            display: inline-block;
+            margin-top: 20px;
+            color: white;
+            background-color: #007bff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);">
+                Torna al Menu Emergenza
+            </a>
+        </div>
+        <div class="subsection" id="vite-intenzionale">
+            <h3 style="color: red; text-align: center; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">VITE INTENZIONALE</h3>
+            <ul id="vite-intenzionale-list" style="list-style: none; padding: 0; text-align: left;">
+                <li style="margin: 10px 0;">
+                    MANETTA MINIMO
+                    <button class="button" onclick="markAsCompleted(this, 'vite-intenzionale')">Completato</button>
+                </li>
+                <li style="margin: 10px 0;">
+                    ALETTONI CENTRATI
+                    <button class="button" onclick="markAsCompleted(this, 'vite-intenzionale')">Completato</button>
+                </li>
+                <li style="margin: 10px 0;">
+                    PIEDE CONTRARIO ALLA ROTAZIONE COME NECESSARIO
+                    <button class="button" onclick="markAsCompleted(this, 'vite-intenzionale')">Completato</button>
+                </li>
+                <li style="margin: 10px 0;">
+                    CLOCHE AVANTI
+                    <button class="button" onclick="markAsCompleted(this, 'vite-intenzionale')">Completato</button>
+                </li>
+                <li style="margin: 10px 0;">
+                    FINITA LA ROTAZIONE
+                    <button class="button" onclick="markAsCompleted(this, 'vite-intenzionale')">Completato</button>
+                </li>
+                <li style="margin: 10px 0;">
+                    PEDALIERA AL CENTRO
+                    <button class="button" onclick="markAsCompleted(this, 'vite-intenzionale')">Completato</button>
+                </li>
+                <li style="margin: 10px 0;">
+                    CLOCHE RICHIAMARE
+                    <button class="button" onclick="markAsCompleted(this, 'vite-intenzionale')">Completato</button>
+                </li>
+                <li style="margin: 10px 0;">
+                    MANETTA COME NECESSARIO
+                    <button class="button" onclick="markAsCompleted(this, 'vite-intenzionale')">Completato</button>
+                </li>
+            </ul>
+            <a class="button" href="#emergenza" style="
+            display: inline-block;
+            margin-top: 20px;
+            color: white;
+            background-color: #007bff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);">
+                Torna al Menu Emergenza
+            </a>
+        </div>
+        <div class="subsection" id="incendio-motore">
+            <h3 style="color: red; text-align: center; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">INCENDIO AL MOTORE</h3>
+            <ul id="incendio-motore-list" style="list-style: none; padding: 0; text-align: center;">
+                <li style="margin: 10px 0;">
+                    RUBINETTI BENZINA OFF
+                    <button class="button" onclick="markAsCompleted(this, 'incendio-motore')">Completato</button>
+                </li>
+                <li style="margin: 10px 0;">
+                    MANETTA ACCELERARE TUTTO
+                    <button class="button" onclick="markAsCompleted(this, 'incendio-motore')">Completato</button>
+                </li>
+                <li style="margin: 10px 0;">
+                    QUANDO MOTORE OFF
+                    <button class="button" onclick="markAsCompleted(this, 'incendio-motore')">Completato</button>
+                </li>
+                <li style="margin: 10px 0;">
+                    MAGNETI DX + SX OFF
+                    <button class="button" onclick="markAsCompleted(this, 'incendio-motore')">Completato</button>
+                </li>
+                <li style="margin: 10px 0;">
+                    PORTIERE APERTE
+                    <button class="button" onclick="markAsCompleted(this, 'incendio-motore')">Completato</button>
+                </li>
+                <li style="margin: 10px 0;">
+                    ATTERRARE
+                    <button class="button" onclick="markAsCompleted(this, 'incendio-motore')">Completato</button>
+                </li>
+                <li style="margin: 10px 0;">
+                    ALLONTANARSI DALL'AEREO
+                    <button class="button" onclick="markAsCompleted(this, 'incendio-motore')">Completato</button>
+                </li>
+            </ul>
+            <a class="button" href="#emergenza" style="
+            display: inline-block;
+            margin-top: 20px;
+            color: white;
+            background-color: #007bff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);">
+                Torna al Menu Emergenza
+            </a>
+        </div>
+        <div class="subsection" id="incendio-elettrico">
+            <h3 style="color: red; text-align: center;">INCENDIO IMPIANTO ELETTRICO</h3>
+            <ul>
+                <li>
+                    MAGNETI DX + SX OFF
+                    <button class="button" onclick="markAsCompleted(this, 'incendio-elettrico')">Completato</button>
+                </li>
+                <li>
+                    CHIAVE MASTER OFF
+                    <button class="button" onclick="markAsCompleted(this, 'incendio-elettrico')">Completato</button>
+                </li>
+                <li>
+                    VELOCITÀ 120 KM/H
+                    <button class="button" onclick="markAsCompleted(this, 'incendio-elettrico')">Completato</button>
+                </li>
+                <li>
+                    PORTIERE APERTE
+                    <button class="button" onclick="markAsCompleted(this, 'incendio-elettrico')">Completato</button>
+                </li>
+                <li>
+                    ATTERRARE
+                    <button class="button" onclick="markAsCompleted(this, 'incendio-elettrico')">Completato</button>
+                </li>
+            </ul>
+            <a class="button" href="#emergenza">Torna al Menu Emergenza</a>
+        </div>
+        <div class="subsection" id="utilizzo-paracadute">
+            <h3 style="color: red; text-align: center;">UTILIZZO PARACADUTE</h3>
+            <ul>
+                <li>
+                    MAGNETI DX + SX OFF
+                    <button class="button" onclick="markAsCompleted(this, 'utilizzo-paracadute')">Completato</button>
+                </li>
+                <li>
+                    CHIAVE MASTER OFF
+                    <button class="button" onclick="markAsCompleted(this, 'utilizzo-paracadute')">Completato</button>
+                </li>
+                <li>
+                    VELOCITÀ 100 KM/H
+                    <button class="button" onclick="markAsCompleted(this, 'utilizzo-paracadute')">Completato</button>
+                </li>
+                <li>
+                    PARACADUTE APRIRE
+                    <button class="button" onclick="markAsCompleted(this, 'utilizzo-paracadute')">Completato</button>
+                </li>
+                <li>
+                    RUBINETTI BENZINA CHIUDERE
+                    <button class="button" onclick="markAsCompleted(this, 'utilizzo-paracadute')">Completato</button>
+                </li>
+                <li>
+                    PORTIERE APRIRE
+                    <button class="button" onclick="markAsCompleted(this, 'utilizzo-paracadute')">Completato</button>
+                </li>
+                <li>
+                    CINTURE STRINGERE
+                    <button class="button" onclick="markAsCompleted(this, 'utilizzo-paracadute')">Completato</button>
+                </li>
+            </ul>
+            <a class="button" href="#emergenza">Torna al Menu Emergenza</a>
+        </div>
+        <div class="subsection" id="flutter">
+            <h3 style="color: red; text-align: center;">FLUTTER</h3>
+            <ul>
+                <li>
+                    MANETTA RIDURRE
+                    <button class="button" onclick="markAsCompleted(this, 'flutter')">Completato</button>
+                </li>
+                <li>
+                    CLOCHE CABRARE
+                    <button class="button" onclick="markAsCompleted(this, 'flutter')">Completato</button>
+                </li>
+            </ul>
+            <a class="button" href="#emergenza">Torna al Menu Emergenza</a>
+        </div>
+        <div class="subsection" id="ghiaccio-carburatore">
+            <h3 style="color: red; text-align: center;">GHIACCIO AL CARBURATORE</h3>
+            <ul>
+                <li>
+                    MANETTA AUMENTARE E RIDURRE PIÙ VOLTE
+                    <button class="button" onclick="markAsCompleted(this, 'ghiaccio-carburatore')">Completato</button>
+                </li>
+            </ul>
+            <a class="button" href="#emergenza">Torna al Menu Emergenza</a>
+        </div>
+        <div class="subsection" id="avaria-carburante">
+            <h3 style="color: red; text-align: center;">AVARIA IMPIANTO CARBURANTE</h3>
+            <ul>
+                <li>
+                    RUBINETTI BENZINA OFF
+                    <button class="button" onclick="markAsCompleted(this, 'avaria-carburante')">Completato</button>
+                </li>
+                <li>
+                    MAGNETI DX + SX OFF
+                    <button class="button" onclick="markAsCompleted(this, 'avaria-carburante')">Completato</button>
+                </li>
+                <li>
+                    ATTERRARE
+                    <button class="button" onclick="markAsCompleted(this, 'avaria-carburante')">Completato</button>
+                </li>
+                <li>
+                    ALLONTANARSI DALL'AEREO
+                    <button class="button" onclick="markAsCompleted(this, 'avaria-carburante')">Completato</button>
+                </li>
+            </ul>
+            <a class="button" href="#emergenza">Torna al Menu Emergenza</a>
+        </div>
+        <div class="subsection" id="superamento-vne">
+            <h3 style="color: red; text-align: center;">SUPERAMENTO VNE</h3>
+            <ul>
+                <li>
+                    ATTERRARE
+                    <button class="button" onclick="markAsCompleted(this, 'superamento-vne')">Completato</button>
+                </li>
+                <li>
+                    FAR ISPEZIONARE L'AEREO DA PERSONALE QUALIFICATO
+                    <button class="button" onclick="markAsCompleted(this, 'superamento-vne')">Completato</button>
+                </li>
+            </ul>
+            <a class="button" href="#emergenza">Torna al Menu Emergenza</a>
+        </div>
+        <div class="subsection" id="guasto-carrello">
+            <h3 style="color: red; text-align: center;">GUASTO AL CARRELLO</h3>
+            <ul>
+                <li>
+                    ATTERRARE SULLA GAMBA EFFICIENTE
+                    <button class="button" onclick="markAsCompleted(this, 'guasto-carrello')">Completato</button>
+                </li>
+                <li>
+                    CLOCHE VERSO LA GAMBA EFFICIENTE
+                    <button class="button" onclick="markAsCompleted(this, 'guasto-carrello')">Completato</button>
+                </li>
+            </ul>
+            <a class="button" href="#emergenza">Torna al Menu Emergenza</a>
+        </div>
+        <div class="subsection" id="avaria-elettrico">
+            <h3 style="color: red; text-align: center;">AVARIA IMPIANTO ELETTRICO</h3>
+            <ul>
+                <li>
+                    SPIA GENERATORE ON
+                    <button class="button" onclick="markAsCompleted(this, 'avaria-elettrico')">Completato</button>
+                </li>
+                <li>
+                    CHIAVE MASTER OFF
+                    <button class="button" onclick="markAsCompleted(this, 'avaria-elettrico')">Completato</button>
+                </li>
+                <li>
+                    ATTERRARE
+                    <button class="button" onclick="markAsCompleted(this, 'avaria-elettrico')">Completato</button>
+                </li>
+            </ul>
+            <a class="button" href="#emergenza">Torna al Menu Emergenza</a>
+        </div>
     </div>
 
+    <script>
+        function checkPassword() {
+            const password = document.getElementById('password').value;
+            if (password === 'tua_password') { // Replace 'tua_password' with your desired password
+                document.getElementById('login').style.display = 'none';
+                document.getElementById('content').style.display = 'block';
+            } else {
+                alert('Password errata!');
+            }
+        }
+    </script>
+    <script>
+function markAsCompleted(button, sectionId) {
+    const task = button.parentElement;
+    const taskId = task.innerText.trim();
+    task.classList.toggle('completed');
+    const isCompleted = task.classList.contains('completed');
+    localStorage.setItem(taskId, isCompleted);
+
+    updateSectionStatus(sectionId);
+}
+
+function updateSectionStatus(sectionId) {
+    const sectionList = document.getElementById(sectionId + "-list");
+    const sectionItem = document.getElementById(sectionId + "-item");
+    const sectionTitle = document.getElementById(sectionId + "-title");
+    const allTasks = sectionList.querySelectorAll('li');
+    const allCompleted = Array.from(allTasks).every(task => task.classList.contains('completed'));
+
+    if (allCompleted) {
+        sectionItem.classList.add('completed');
+        sectionTitle.classList.add('completed');
+    } else {
+        sectionItem.classList.remove('completed');
+        sectionTitle.classList.remove('completed');
+    }
+}
+
+function resetSection(sectionId) {
+    const sectionList = document.getElementById(sectionId + "-list");
+    const tasks = sectionList.querySelectorAll('li');
+    tasks.forEach(task => {
+        task.classList.remove('completed');
+        const taskId = task.innerText.trim();
+        localStorage.removeItem(taskId);
+    });
+}
+
+function resetAll() {
+    localStorage.clear();
+    location.reload();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const tasks = document.querySelectorAll('li');
+    tasks.forEach(task => {
+        const taskId = task.innerText.trim();
+        const isCompleted = localStorage.getItem(taskId) === 'true';
+        if (isCompleted) {
+            task.classList.add('completed');
+        }
+    });
+});
+</script>
 </body>
 </html>
-<!-- Sezione Controlli Pre-volo -->
-<div class="section" id="prevolo">
-    <h2 class="section-title" id="prevolo-title">Controlli Pre-volo</h2>
-    <ul id="prevolo-list">
-        <li>
-            Ispezione cabina check 
-            <button class="button" onclick="markAsCompleted(this, 'prevolo')">Completato</button>
-        </li>
-        <li>
-            Documenti check 
-            <button class="button" onclick="markAsCompleted(this, 'prevolo')">Completato</button>
-        </li>
-        <li>
-            Chiave Master rimuovere 
-            <button class="button" onclick="markAsCompleted(this, 'prevolo')">Completato</button>
-        </li>
-        <li>
-            Magneti DX + SX OFF 
-            <button class="button" onclick="markAsCompleted(this, 'prevolo')">Completato</button>
-        </li>
-        <li>
-            Gascolator check 
-            <button class="button" onclick="markAsCompleted(this, 'prevolo')">Completato</button>
-        </li>
-        <li>
-            Cofano aprire 
-            <button class="button" onclick="markAsCompleted(this, 'prevolo')">Completato</button>
-        </li>
-        <li>
-            Vano motore check 
-            <button class="button" onclick="markAsCompleted(this, 'prevolo')">Completato</button>
-        </li>
-        <li>
-            Bulloni castello motore check 
-            <button class="button" onclick="markAsCompleted(this, 'prevolo')">Completato</button>
-        </li>
-        <li>
-            Candele check 
-            <button class="button" onclick="markAsCompleted(this, 'prevolo')">Completato</button>
-        </li>
-        <li>
-            Tubi benzina check 
-            <button class="button" onclick="markAsCompleted(this, 'prevolo')">Completato</button>
-        </li>
-        <li>
-            Carburatori check 
-            <button class="button" onclick="markAsCompleted(this, 'prevolo')">Completato</button>
-        </li>
-        <li>
-            Tubi di scarico check 
-            <button class="button" onclick="markAsCompleted(this, 'prevolo')">Completato</button>
-        </li>
-        <li>
-            Tubi liquido refrigerante check 
-            <button class="button" onclick="markAsCompleted(this, 'prevolo')">Completato</button>
-        </li>
-        <li>
-            Livello liquido refrigerante check 
-            <button class="button" onclick="markAsCompleted(this, 'prevolo')">Completato</button>
-        </li>
-        <li>
-            Livello olio check solo con motore freddo 
-            <button class="button" onclick="markAsCompleted(this, 'prevolo')">Completato</button>
-        </li>
-        <li>
-            Bulloni elica check 
-            <button class="button" onclick="markAsCompleted(this, 'prevolo')">Completato</button>
-        </li>
-        <li>
-            Pannello elettrico relè check 
-            <button class="button" onclick="markAsCompleted(this, 'prevolo')">Completato</button>
-        </li>
-    </ul>
-    <div class="back">
-        <a class="button" href="#sezioni">Torna all'Indice</a>
-        <button class="button reset-button" onclick="resetSection('prevolo')">Azzera</button>
-    </div>
-    <div class="section-footer" style="text-align: left; margin-top: 20px; font-size: 14px; color: #555;">Creato ed ideato da GJS</div>
-</div>
-<!-- Sezione Controlli Esterni -->
-<div class="section" id="esterni">
-    <h2 class="section-title" id="esterni-title">Controlli Esterni</h2>
-    <ul id="esterni-list">
-        <li>
-            Elìca  check 
-            <button class="button" onclick="markAsCompleted(this, 'esterni')">Completato</button>
-        </li>
-        <li>
-            Ruotino anteriore check 
-            <button class="button" onclick="markAsCompleted(this, 'esterni')">Completato</button>
-        </li>
-        <li>
-            Vetratura  check 
-            <button class="button" onclick="markAsCompleted(this, 'esterni')">Completato</button>
-        </li>
-        <li>
-            Cofano check 
-            <button class="button" onclick="markAsCompleted(this, 'esterni')">Completato</button>
-        </li>
-        <li>
-            Presa statica check 
-            <button class="button" onclick="markAsCompleted(this, 'esterni')">Completato</button>
-        </li>
-        <li>
-            Ala DX  check 
-            <button class="button" onclick="markAsCompleted(this, 'esterni')">Completato</button>
-        </li>
-        <li>
-            Faro check 
-            <button class="button" onclick="markAsCompleted(this, 'esterni')">Completato</button>
-        </li>
-        <li>
-            Avvisatore di stallo check 
-            <button class="button" onclick="markAsCompleted(this, 'esterni')">Completato</button>
-        </li>
-        <li>
-            Strobo e luci nav check 
-            <button class="button" onclick="markAsCompleted(this, 'esterni')">Completato</button>
-        </li>
-        <li>
-            Sfiato serbatoio check 
-            <button class="button" onclick="markAsCompleted(this, 'esterni')">Completato</button>
-        </li>
-        <li>
-            Alettone e trim ₄ check 
-            <button class="button" onclick="markAsCompleted(this, 'esterni')">Completato</button>
-        </li>
-        <li>
-            Flap check 
-            <button class="button" onclick="markAsCompleted(this, 'esterni')">Completato</button>
-        </li>
-        <li>
-            Carrello principale DX ₅ check 
-            <button class="button" onclick="markAsCompleted(this, 'esterni')">Completato</button>
-        </li>
-        <li>
-            Antenne  check 
-            <button class="button" onclick="markAsCompleted(this, 'esterni')">Completato</button>
-        </li>
-        <li>
-            Fusoliera  check 
-            <button class="button" onclick="markAsCompleted(this, 'esterni')">Completato</button>
-        </li>
-        <li>
-            Strobo check 
-            <button class="button" onclick="markAsCompleted(this, 'esterni')">Completato</button>
-        </li>
-        <li>
-            Timone di direzione check 
-            <button class="button" onclick="markAsCompleted(this, 'esterni')">Completato</button>
-        </li>
-        <li>
-            Impennaggio orizzontale check 
-            <button class="button" onclick="markAsCompleted(this, 'esterni')">Completato</button>
-        </li>
-        <li>
-            Trim check 
-            <button class="button" onclick="markAsCompleted(this, 'esterni')">Completato</button>
-        </li>
-        <li>
-            Carrello Principale sx check 
-            <button class="button" onclick="markAsCompleted(this, 'esterni')">Completato</button>
-        </li>
-        <li>
-            Alettone e Flap sx check 
-            <button class="button" onclick="markAsCompleted(this, 'esterni')">Completato</button>
-        </li>
-        <li>
-            Strobo luci nav check 
-            <button class="button" onclick="markAsCompleted(this, 'esterni')">Completato</button>
-        </li>
-        <li>
-            Ala sx 
-            <button class="button" onclick="markAsCompleted(this, 'esterni')">Completato</button>
-        </li>
-        <li>
-            Copri pitot check 
-            <button class="button" onclick="markAsCompleted(this, 'esterni')">Completato</button>
-        </li>
-        <li>
-            Faro check 
-            <button class="button" onclick="markAsCompleted(this, 'esterni')">Completato</button>
-        </li>
-        <li>
-            Vetratura check 
-            <button class="button" onclick="markAsCompleted(this, 'esterni')">Completato</button>
-        </li>
-        <li>
-            Presa Statica check 
-            <button class="button" onclick="markAsCompleted(this, 'esterni')">Completato</button>
-        </li>
-        <li>
-            Livello Carburante check 
-            <button class="button" onclick="markAsCompleted(this, 'esterni')">Completato</button>
-        </li>
-        <h3 style="text-align: center;">Verificre il carburante con l' apposita asta dai serbatoi,         
-        Fare riferimento al manuale di volo da pag.39 a pag.42</h3>
-    </ul>
-    <div class="back">
-        <a class="button" href="#sezioni">Torna all'Indice</a>
-        <button class="button reset-button" onclick="resetSection('esterni')">Azzera</button>
-    </div>
-    <div class="section-footer" style="text-align: left; margin-top: 20px; font-size: 14px; color: #555;">Creato ed ideato da GJS</div>
-</div>
-<script>
-function markAsCompleted(button, sectionId) {
-    const task = button.parentElement;
-    const taskId = task.innerText.trim();
-    task.classList.toggle('completed');
-    const isCompleted = task.classList.contains('completed');
-    localStorage.setItem(taskId, isCompleted);
-
-    updateSectionStatus(sectionId);
-}
-
-function updateSectionStatus(sectionId) {
-    const sectionList = document.getElementById(sectionId + "-list");
-    const sectionItem = document.getElementById(sectionId + "-item");
-    const sectionTitle = document.getElementById(sectionId + "-title");
-    const allTasks = sectionList.querySelectorAll('li');
-    const allCompleted = Array.from(allTasks).every(task => task.classList.contains('completed'));
-
-    if (allCompleted) {
-        sectionItem.classList.add('completed');
-        sectionTitle.classList.add('completed');
-    } else {
-        sectionItem.classList.remove('completed');
-        sectionTitle.classList.remove('completed');
-    }
-}
-
-function resetSection(sectionId) {
-    const sectionList = document.getElementById(sectionId + "-list");
-    const tasks = sectionList.querySelectorAll('li');
-    tasks.forEach(task => {
-        task.classList.remove('completed');
-        const taskId = task.innerText.trim();
-        localStorage.removeItem(taskId);
-    });
-}
-
-function resetAll() {
-    localStorage.clear();
-    location.reload();
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    const tasks = document.querySelectorAll('li');
-    tasks.forEach(task => {
-        const taskId = task.innerText.trim();
-        const isCompleted = localStorage.getItem(taskId) === 'true';
-        if (isCompleted) {
-            task.classList.add('completed');
-        }
-    });
-});
-</script>
-<script>
-function markAsCompleted(button, sectionId) {
-    const task = button.parentElement;
-    const taskId = task.innerText.trim();
-    task.classList.toggle('completed');
-    const isCompleted = task.classList.contains('completed');
-    localStorage.setItem(taskId, isCompleted);
-
-    updateSectionStatus(sectionId);
-}
-
-function updateSectionStatus(sectionId) {
-    const sectionList = document.getElementById(sectionId + "-list");
-    const sectionItem = document.getElementById(sectionId + "-item");
-    const sectionTitle = document.getElementById(sectionId + "-title");
-    const allTasks = sectionList.querySelectorAll('li');
-    const allCompleted = Array.from(allTasks).every(task => task.classList.contains('completed'));
-
-    if (allCompleted) {
-        sectionItem.classList.add('completed');
-        sectionTitle.classList.add('completed');
-    } else {
-        sectionItem.classList.remove('completed');
-        sectionTitle.classList.remove('completed');
-    }
-}
-
-function resetSection(sectionId) {
-    const sectionList = document.getElementById(sectionId + "-list");
-    const tasks = sectionList.querySelectorAll('li');
-    tasks.forEach(task => {
-        task.classList.remove('completed');
-        const taskId = task.innerText.trim();
-        localStorage.removeItem(taskId);
-    });
-}
-
-function resetAll() {
-    localStorage.clear();
-    location.reload();
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    const tasks = document.querySelectorAll('li');
-    tasks.forEach(task => {
-        const taskId = task.innerText.trim();
-        const isCompleted = localStorage.getItem(taskId) === 'true';
-        if (isCompleted) {
-            task.classList.add('completed');
-        }
-    });
-});
-</script>
-<div class="section" id="avviamento">
-    <h2 class="section-title" id="avviamento-title">Controlli Avviamento</h2>
-    <ul id="avviamento-list">
-        <li>
-            SEDILI REGOLATI 
-            <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
-        </li>
-        <li>
-            CINTURE ALLACCIATE 
-            <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
-        </li>
-        <li>
-            PORTE CHIUSE 
-            <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
-        </li>
-        <li>
-            CHIAVE MASTER OFF 
-            <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
-        </li>
-        <li>
-            MAGNETI SX + DX OFF 
-            <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
-        </li>
-        <li>
-            FRENO DI PARCHEGGIO INSERITO 
-            <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
-        </li>
-        <li>
-            RUBINETTI BENZINA APERTI 
-            <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
-        </li>
-        <li>
-            PARACADUTE SICURA INSERITA 
-            <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
-        </li>
-        <li>
-            CUFFIE INDOSSATE 
-            <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
-        </li>
-        <li>
-            CHIAVE MASTER ON 
-            <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
-        </li>
-        <li>
-            DYNON 1 e 2 ON 
-            <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
-        </li>
-        <li>
-            ORAMETRO CHECK e PRENDERE NOTA 
-            <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
-        </li>
-        <li>
-            STROBO ON 
-            <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
-        </li>
-        <li>
-            POMPA BENZINA ON max 5" poi OFF 0,15-0,5 bar 
-            <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
-        </li>
-    </ul>
-    <h3 style="text-align: center;">AVVIAMENTO A FREDDO</h3>
-    <ul>
-        <li>
-            MANETTA AL MINIMO 
-            <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
-        </li>
-        <li>
-            ARIA CARBURATORE ON 
-            <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
-        </li>
-    </ul>
-    <h3 style="text-align: center;">AVVIAMENTO A CALDO</h3>
-    <ul>
-        <li>
-            MANETTA INSERITA 1cm 
-            <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
-        </li>
-        <li>
-            ARIA CARBURATORE OFF 
-            <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
-        </li>
-    </ul>
-    <ul id="avviamento-list-2">
-        <li>
-            MAGNETI SX + DX ON 
-            <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
-        </li>
-        <li>
-            AREA CIRCOSTANTE LIBERA CHECK 
-            <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
-        </li>
-        <li>
-            PULSANTE START 
-            <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
-        </li>
-        <li>
-            ON (Via dall' ELICA!) 
-            <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
-        </li>
-        <li>
-            MANETTA 2.000 / 2.400 RPM 
-            <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
-        </li>
-        <li>
-            PRESSIONE OLIO CHECK 2-6 bar 
-            <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
-        </li>
-        <li>
-            PRESSIONE BENZINA CHECK 0,15-0,5 bar 
-            <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
-        </li>
-        <li>
-            ARIA CARBURATORE se motore freddo OFF gradualmente 
-            <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
-        </li>
-        <li>
-            FRIZIONE MANETTA CHECK 
-            <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
-        </li>
-        <li>
-            RADIO ON e SET 
-            <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
-        </li>
-        <li>
-            TRASPONDER ON e SET 
-            <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
-        </li>
-        <li>
-            LUCI NAVIGAZIONE ON 
-            <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
-        </li>
-        <li>
-            LUCI TAXI ON 
-            <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
-        </li>
-        <li>
-            LUCI LANDING ON 
-            <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
-        </li>
-        <li>
-            BREAKERS CHECK 
-            <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
-        </li>
-        <li>
-            TEMPERATURA OLIO 50° minimo 
-            <button class="button" onclick="markAsCompleted(this, 'avviamento')">Completato</button>
-        </li>
-        <h3 style="text-align: center;">Rullare a punto attesa e posizionarsi a 45°, velocità massima 4 km/h.
-        Provare il funzionamento dei freni e il movimento del ruotino anteriore.
-        Verificare manica a vento</h3>
-    </ul>
-    <a class="button" href="#sezioni">Torna all'Indice</a>
-    <button class="button reset-button" onclick="resetSection('avviamento')">Azzera</button>
-    <div class="section-footer" style="text-align: left; margin-top: 20px; font-size: 14px; color: #555;">Creato ed ideato da GJS</div>
-</div>
-
-<!-- Sezione Controlli Rullaggio -->
-<div class="section" id="rullaggio">
-    <h2 class="section-title" id="rullaggio-title">Controlli Rullaggio</h2>
-    <ul id="rullaggio-list">
-        <li>
-            Freno check 
-            <button class="button" onclick="markAsCompleted(this, 'rullaggio')">Completato</button>
-        </li>
-        <li>
-            Manica a Vento check 
-            <button class="button" onclick="markAsCompleted(this, 'rullaggio')">Completato</button>
-        </li>
-        <li>
-            Bussola check 
-            <button class="button" onclick="markAsCompleted(this, 'rullaggio')">Completato</button>
-        </li>
-        <li>
-            Orizzonte Artificiale check 
-            <button class="button" onclick="markAsCompleted(this, 'rullaggio')">Completato</button>
-        </li>
-        <li>
-            Pallina check 
-            <button class="button" onclick="markAsCompleted(this, 'rullaggio')">Completato</button>
-        </li>
-    </ul>
-    <a class="button" href="#sezioni">Torna all'Indice</a>
-    <button class="button reset-button" onclick="resetSection('rullaggio')">Azzera</button>
-    <div class="section-footer" style="text-align: left; margin-top: 20px; font-size: 14px; color: #555;">Creato ed ideato da GJS</div>
-</div>
-
-<div class="section" id="attesa">
-    <h2 class="section-title" id="attesa-title">Controlli Punto Attesa</h2>
-    <ul id="attesa-list">
-        <li>
-            FRENO ON 
-            <button class="button" onclick="markAsCompleted(this, 'attesa')">Completato</button>
-        </li>
-        <li>
-            PORTE CHIUSE 
-            <button class="button" onclick="markAsCompleted(this, 'attesa')">Completato</button>
-        </li>
-        <li>
-            CINTURE ALLACCIATE 
-            <button class="button" onclick="markAsCompleted(this, 'attesa')">Completato</button>
-        </li>
-        <li>
-            COMANDI LIBERI 
-            <button class="button" onclick="markAsCompleted(this, 'attesa')">Completato</button>
-        </li>
-        <li>
-            ALTIMETRO SET QNH 
-            <button class="button" onclick="markAsCompleted(this, 'attesa')">Completato</button>
-        </li>
-        <li>
-            TRIM SET PER DECOLLO 
-            <button class="button" onclick="markAsCompleted(this, 'attesa')">Completato</button>
-        </li>
-        <li>
-            FLAP 15° 
-            <button class="button" onclick="markAsCompleted(this, 'attesa')">Completato</button>
-        </li>
-        <li>
-            PARACADUTE RIMUOVERE SICURA 
-            <button class="button" onclick="markAsCompleted(this, 'attesa')">Completato</button>
-        </li>
-        <li>
-            OLIO PRESSIONE CHECK 2-6 bar 
-            <button class="button" onclick="markAsCompleted(this, 'attesa')">Completato</button>
-        </li>
-        <li>
-            OLIO TEMPERATURA CHECK 60°C min. 
-            <button class="button" onclick="markAsCompleted(this, 'attesa')">Completato</button>
-        </li>
-        <li>
-            CHT TEMPERATURA CHECK 60°C min. 
-            <button class="button" onclick="markAsCompleted(this, 'attesa')">Completato</button>
-        </li>
-        <li>
-            PROVA MAGNETI CHECK 3800 RPM calo 300 diff. 120 
-            <button class="button" onclick="markAsCompleted(this, 'attesa')">Completato</button>
-        </li>
-        <li>
-            MANICA A VENTO CHECK 
-            <button class="button" onclick="markAsCompleted(this, 'attesa')">Completato</button>
-        </li>
-        <li>
-            TESTATE PISTA LIBERE CHECK 
-            <button class="button" onclick="markAsCompleted(this, 'attesa')">Completato</button>
-        </li>
-        <li>
-            LIVELLO BENZINA CHECK 
-            <button class="button" onclick="markAsCompleted(this, 'attesa')">Completato</button>
-        </li>
-        <li>
-            POMPA BENZINA ON 0,15-0,5 bar 
-            <button class="button" onclick="markAsCompleted(this, 'attesa')">Completato</button>
-        </li>
-        <li>
-            BRIEFING DECOLLO ESEGUIRE CHECK 
-            <button class="button" onclick="markAsCompleted(this, 'attesa')">Completato</button>
-        </li>
-        <li>
-            CHIAMATA RADIO ESEGUIRE 
-            <button class="button" onclick="markAsCompleted(this, 'attesa')">Completato</button>
-        </li>
-        <h3 style="text-align: center;">BRIEFING DECOLLO</h3>
-        <h3 style="text-align: center;">
-            IN CASO DI PIANTATA MOTORE O CALO DI GIRI:
-            ∙SE IL VELIVOLO E' ANCORA IN PISTA MOTORE AL MINIMO, FRENARE CON
-            DECISIONE E LIBERARE LA PISTA.
-            ∙SE GIA' DECOLLATI MA CON PISTA SUFFICIENTE MOTORE AL MINIMO, ATTERRARE
-            E RIPETERE L' OPERAZIONE PRECEDENTE.
-            ∙SE GIA' DECOLLATI E FUORI DALLA PISTA SOTTO I 700 FT AGL PORTARE CON
-            DECISIONE IL VELIVOLO IN DISCESA, TENERE LA PRUA O VIRARE MASSIMO 30° DX E
-            SX PER TROVARE UN CAMPO PER L' ATTERRRAGGIO.
-            <h3 style="text-align: center;">NON RIENTRARE IN PISTA</h3>
-
-            SE GIA DECOLLATI E SOPRA I 700 FT AGL PORTARE CON DECISIONE IL VELIVOLO IN
-            DISCESA E MANTENERE LA VELOCITA' DI MASSIMA EFFICIENZA (110 KM/H). SE LE
-            CONDIZIONI LO PERMETTONO TENTARE IL CAPPIO A 180° PER IL RIENTRO IN
-            CAMPO CON VIRATE NON ACCENTUATE. ALTRIMENTI CERCARE UN CAMPO
-            ALTERNATIVO.
-        </h3>
-        <h3 style="text-align: center;">
-            IN CASO DI MALESSERE DEL PILOTA:
-            SE IN VOLO IL PASSEGGERO DEVE PORTARE IL MOTORE AL MINIMO, SPEGNERE IL
-            MOTORE, AZIONARE IL PARACADUTE E PREPARARSI ALL' IMPATTO. UNA VOLTA A
-            TERRA LIBERARE L' AEREO, ALLONTANARSI DIETRO E CHIAMARE I SOCCORSI.
-            <h3 style="text-align: center;">IN CASO DI EMERGENZA A TERRA:
-            SU INDICAZIONE DEL PILOTA, IL PASSEGGERO DEVE LIBERARE L' AEREO,
-            ALLONTANARSI DIETRO.
-    </ul>
-    <a class="button" href="#sezioni">Torna all'Indice</a>
-    <button class="button reset-button" onclick="resetSection('attesa')">Azzera</button>
-    <div class="section-footer" style="text-align: left; margin-top: 20px; font-size: 14px; color: #555;">Creato ed ideato da GJS</div>
-</div>
-
-<div class="section" id="decollo">
-    <h2 class="section-title" id="decollo-title">Controlli Decollo e Salita</h2>
-    <ul id="decollo-list">
-        <li>
-            MANETTA MAX 
-            <button class="button" onclick="markAsCompleted(this, 'decollo')">Completato</button>
-        </li>
-        <li>
-            CLOCHE A CABRARE - RUOTINO SOLLEVATO 
-            <button class="button" onclick="markAsCompleted(this, 'decollo')">Completato</button>
-        </li>
-        <li>
-            VELOCITÀ DI ROTAZIONE 80 KM/H 
-            <button class="button" onclick="markAsCompleted(this, 'decollo')">Completato</button>
-        </li>
-        <li>
-            FRENO UN COLPO DOPO DECOLLO 
-            <button class="button" onclick="markAsCompleted(this, 'decollo')">Completato</button>
-        </li>
-        <li>
-            VELOCITA DI SALITA VY 110 KM/H 
-            <button class="button" onclick="markAsCompleted(this, 'decollo')">Completato</button>
-        </li>
-        <h3 style="text-align: center;">QUOTA DI SICUREZZA 300FT AGL</h3>
-        <li>
-            POMPA BENZINA OFF 
-            <button class="button" onclick="markAsCompleted(this, 'decollo')">Completato</button>
-        </li>
-        <li>
-            VELOCITA DI SALITA 120 KM/H 
-            <button class="button" onclick="markAsCompleted(this, 'decollo')">Completato</button>
-        </li>
-        <li>
-            FLAP UP 
-            <button class="button" onclick="markAsCompleted(this, 'decollo')">Completato</button>
-        </li>
-        <li>
-            LUCI LANDING OFF 
-            <button class="button" onclick="markAsCompleted(this, 'decollo')">Completato</button>
-        </li>
-        <li>
-            LUCI TAXI OFF 
-            <button class="button" onclick="markAsCompleted(this, 'decollo')">Completato</button>
-        </li>
-        <li>
-            MOTORE 4800-5000 RPM 
-            <button class="button" onclick="markAsCompleted(this, 'decollo')">Completato</button>
-        </li>
-        <h3 style="text-align: center;">PARAMETRI DI VOLO</h3>
-        <li>
-            ROTAZIONE 80 KM/H 
-            <button class="button" onclick="markAsCompleted(this, 'decollo')">Completato</button>
-        </li>
-        <li>
-            SALITA RAPIDA Vy 110 KM/H 
-            <button class="button" onclick="markAsCompleted(this, 'decollo')">Completato</button>
-        </li>
-        <li>
-            SALITA RIPIDA Vx 90 KM/H 
-            <button class="button" onclick="markAsCompleted(this, 'decollo')">Completato</button>
-        </li>
-        <li>
-            RPM MAX 5' 
-            <button class="button" onclick="markAsCompleted(this, 'decollo')">Completato</button>
-        </li>
-        <li>
-            CHT 90-135°C 
-            <button class="button" onclick="markAsCompleted(this, 'decollo')">Completato</button>
-        </li>
-        <li>
-            TEMPERATURA OLIO 50-130°C 
-            <button class="button" onclick="markAsCompleted(this, 'decollo')">Completato</button>
-        </li>
-        <li>
-            PRESSIONE OLIO 2-6 bar 
-            <button class="button" onclick="markAsCompleted(this, 'decollo')">Completato</button>
-        </li>
-        <li>
-            VENTO CONTRARIO MAX 28 KM/H 
-            <button class="button" onclick="markAsCompleted(this, 'decollo')">Completato</button>
-        </li>
-        <li>
-            VENTO AL TRAVERSO MAX 28 KM/H 
-            <button class="button" onclick="markAsCompleted(this, 'decollo')">Completato</button>
-        </li>
-    </ul>
-    <a class="button" href="#sezioni">Torna all'Indice</a>
-    <button class="button reset-button" onclick="resetSection('decollo')">Azzera</button>
-    <div class="section-footer" style="text-align: left; margin-top: 20px; font-size: 14px; color: #555;">Creato ed ideato da GJS</div>
-</div>
-<div class="section" id="crociera">
-    <h2 class="section-title" id="crociera-title">Controlli Crociera</h2>
-    <ul id="crociera-list">
-        <h3 style="text-align: center;">PARAMETRI DI VOLO</h3>
-        <li>
-            ECONOMICA:
-            <strong>4500rpm 16l/h</strong>
-        </li>
-        <li>
-            NORMALE:  
-            <strong>4800rpm 18l/h</strong>
-        </li>
-        <li>
-            VELOCE:   
-            <strong>5009rpm 20l/h</strong>
-        </li>
-        <li>
-            CHT: 
-            <strong>90-135°C</strong>
-        </li>
-        <li>
-            TEMPERATURA OLIO: 
-            <strong>50-130°C</strong>
-        </li>
-        <li>
-            PRESSIONE OLIO: 
-            <strong>2-6 bar</strong>
-        </li>
-        <li>
-            VELOCITÀ DI MANOVRA: 
-            <strong>160 KM/H</strong>
-        </li>
-        <li>
-            VELOCITÀ CROCIERA ECONOMICA: 
-            <strong>160 KM/H</strong>
-        </li>
-        <li>
-            VELOCITÀ DI CROCIERA NORMALE: 
-            <strong>190 KM/H</strong>
-        </li>
-        <li>
-            VELOCITÀ DI CROCIERA VELOCE: 
-            <strong>210 KM/H</strong>
-        </li>
-        <li>
-            VELOCITÀ DA NON SUPERARE (VNE): 
-            <strong>240 KM/H</strong>
-        </li>
-        <li>
-            VELOCITÀ VENTO A TRAVERSO: 
-            <strong>28 KM/H</strong>
-        </li>
-    </ul>
-    <a class="button" href="#sezioni">Torna all'Indice</a>
-    <button class="button reset-button" onclick="resetSection('crociera')">Azzera</button>
-    <div class="section-footer" style="text-align: left; margin-top: 20px; font-size: 14px; color: #555;">Creato ed ideato da GJS</div>
-</div>
-<div class="section" id="sottovento">
-    <h2 class="section-title" id="sottovento-title">Controlli Sottovento</h2>
-    <ul id="sottovento-list">
-        <li>
-            PARAMETRI MOTORE CHECK 
-            <button class="button" onclick="markAsCompleted(this, 'sottovento')">Completato</button>
-        </li>
-        <li>
-            VELOCITÀ &lt;120 KM/H 
-            <button class="button" onclick="markAsCompleted(this, 'sottovento')">Completato</button>
-        </li>
-        <li>
-            FLAP 15° 
-            <button class="button" onclick="markAsCompleted(this, 'sottovento')">Completato</button>
-        </li>
-        <li>
-            TRIM SET PER DISCESA 
-            <button class="button" onclick="markAsCompleted(this, 'sottovento')">Completato</button>
-        </li>
-        <li>
-            FARO ATTERAGGIO ON 
-            <button class="button" onclick="markAsCompleted(this, 'sottovento')">Completato</button>
-        </li>
-        <li>
-            POMPA BENZINA ON 
-            <button class="button" onclick="markAsCompleted(this, 'sottovento')">Completato</button>
-        </li>
-        <li>
-            FRENO CHECK OFF 
-            <button class="button" onclick="markAsCompleted(this, 'sottovento')">Completato</button>
-        </li>
-    </ul>
-    <a class="button" href="#sezioni">Torna all'Indice</a>
-    <button class="button reset-button" onclick="resetSection('sottovento')">Azzera</button>
-    <div class="section-footer" style="text-align: left; margin-top: 20px; font-size: 14px; color: #555;">Creato ed ideato da GJS</div>
-</div>
-<div class="section" id="base">
-    <h2 class="section-title" id="base-title">Controlli Base</h2>
-    <ul id="base-list">
-        <li>
-            VELOCITÀ 110 KM/H 
-            <button class="button" onclick="markAsCompleted(this, 'base')">Completato</button>
-        </li>
-        <li>
-            FLAP 20° 
-            <button class="button" onclick="markAsCompleted(this, 'base')">Completato</button>
-        </li>
-        <li>
-            TRIM SET 
-            <button class="button" onclick="markAsCompleted(this, 'base')">Completato</button>
-        </li>
-    </ul>
-    <a class="button" href="#sezioni">Torna all'Indice</a>
-    <button class="button reset-button" onclick="resetSection('base')">Azzera</button>
-    <div class="section-footer" style="text-align: left; margin-top: 20px; font-size: 14px; color: #555;">Creato ed ideato da GJS</div>
-</div>
-<div class="section" id="finale">
-    <h2 class="section-title" id="finale-title">Controlli Finale</h2>
-    <ul id="finale-list">
-        <li>
-            VELOCITÀ 90 KM/H 
-            <button class="button" onclick="markAsCompleted(this, 'finale')">Completato</button>
-        </li>
-        <li>
-            FLAP 30-50° 
-            <button class="button" onclick="markAsCompleted(this, 'finale')">Completato</button>
-        </li>
-        <li>
-            TRIM SET PER DISCESA 
-            <button class="button" onclick="markAsCompleted(this, 'finale')">Completato</button>
-        </li>
-    </ul>
-    <a class="button" href="#sezioni">Torna all'Indice</a>
-    <button class="button reset-button" onclick="resetSection('finale')">Azzera</button>
-    <div class="section-footer" style="text-align: left; margin-top: 20px; font-size: 14px; color: #555;">Creato ed ideato da GJS</div>
-</div>
-<div class="section" id="riattaccata">
-    <h2 class="section-title" id="riattaccata-title">Controlli Riattaccata </h2>
-    <ul id="riattaccata-list">
-        <h3 style="text-align: center;">MANTENERE QUOTA DI SICUREZZA</h3>
-        <li>
-            TUTTA POTENZA ED ASSETTO A CABRARE ESEGUIRE
-            <button class="button" onclick="markAsCompleted(this, 'riattaccata')">Completato</button>
-        </li>
-        <li>
-            FLAP 15°
-            <button class="button" onclick="markAsCompleted(this, 'riattaccata')">Completato</button>
-        </li>
-        <li>
-            PROCEDURA COME DECOLLO ESEGUIRE
-            <button class="button" onclick="markAsCompleted(this, 'riattaccata')">Completato</button>
-        </li>
-        <a class="button" href="#sezioni">Torna all'Indice</a>
-        <button class="button reset-button" onclick="resetSection('riattaccata')">Azzera</button>
-    </ul>
-    <div class="section-footer" style="text-align: left; margin-top: 20px; font-size: 14px; color: #555;">Creato ed ideato da GJS</div>
-</div>
-<div class="section" id="parcheggio">
-    <h2 class="section-title" id="parcheggio-title">Controlli Parcheggio e Spegnimento</h2>
-    <ul id="parcheggio-list">
-        <li>
-            FRENO PARCHEGGIO ON 
-            <button class="button" onclick="markAsCompleted(this, 'parcheggio')">Completato</button>
-        </li>
-        <li>
-            FLAP UP 
-            <button class="button" onclick="markAsCompleted(this, 'parcheggio')">Completato</button>
-        </li>
-        <li>
-            PARAMETRI MOTORE CHECK 
-            <button class="button" onclick="markAsCompleted(this, 'parcheggio')">Completato</button>
-        </li>
-        <li>
-            ORAMETRO CHECK E PRENDERE NOTA 
-            <button class="button" onclick="markAsCompleted(this, 'parcheggio')">Completato</button>
-        </li>
-        <li>
-            POMPA BENZINA OFF 
-            <button class="button" onclick="markAsCompleted(this, 'parcheggio')">Completato</button>
-        </li>
-        <li>
-            LUCI LANDING OFF 
-            <button class="button" onclick="markAsCompleted(this, 'parcheggio')">Completato</button>
-        </li>
-        <li>
-            LUCI TAXI OFF 
-            <button class="button" onclick="markAsCompleted(this, 'parcheggio')">Completato</button>
-        </li>
-        <li>
-            LUCI NAVIGAZIONE OFF 
-            <button class="button" onclick="markAsCompleted(this, 'parcheggio')">Completato</button>
-        </li>
-        <li>
-            RADIO E TRANSPONDER OFF 
-            <button class="button" onclick="markAsCompleted(this, 'parcheggio')">Completato</button>
-        </li>
-        <li>
-            DYNON 1 e 2 OFF 
-            <button class="button" onclick="markAsCompleted(this, 'parcheggio')">Completato</button>
-        </li>
-        <li>
-            MAGNETI DX + SX OFF 
-            <button class="button" onclick="markAsCompleted(this, 'parcheggio')">Completato</button>
-        </li>
-        <li>
-            LUCI STROBO OFF 
-            <button class="button" onclick="markAsCompleted(this, 'parcheggio')">Completato</button>
-        </li>
-        <li>
-            CHIAVE MASTER OFF 
-            <button class="button" onclick="markAsCompleted(this, 'parcheggio')">Completato</button>
-        </li>
-        <li>
-            INTERRUTTORI CHECK OFF 
-            <button class="button" onclick="markAsCompleted(this, 'parcheggio')">Completato</button>
-        </li>
-        <li>
-            BREAKERS CHECK 
-            <button class="button" onclick="markAsCompleted(this, 'parcheggio')">Completato</button>
-        </li>
-        <li>
-            COPRI PITOT ON 
-            <button class="button" onclick="markAsCompleted(this, 'parcheggio')">Completato</button>
-        </li>
-        <li>
-            ELICA, VETRATURE... PULIRE 
-            <button class="button" onclick="markAsCompleted(this, 'parcheggio')">Completato</button>
-        </li>
-        <h3 style="text-align: center;">ANCORAGGIO AEREO</h3>
-        <li>
-            FRENARE E TOGLIERE CHIAVE CHECK 
-            <button class="button" onclick="markAsCompleted(this, 'parcheggio')">Completato</button>
-        </li>
-        <li>
-            LUCCHETTO LEVA PARACADUTE CHECK 
-            <button class="button" onclick="markAsCompleted(this, 'parcheggio')">Completato</button>
-        </li>
-        <li>
-            BLOCCARE CLOCHE E CHIUDERE PORTE CHECK 
-            <button class="button" onclick="markAsCompleted(this, 'parcheggio')">Completato</button>
-        </li>
-        <li>
-            METTERE CEPPI CHECK 
-            <button class="button" onclick="markAsCompleted(this, 'parcheggio')">Completato</button>
-        </li>
-        <li>
-            BLOCCARE FLAP E ALETTONI CHECK 
-            <button class="button" onclick="markAsCompleted(this, 'parcheggio')">Completato</button>
-        </li>
-        <li>
-            ANCORARE ALA A TERRA CHECK 
-            <button class="button" onclick="markAsCompleted(this, 'parcheggio')">Completato</button>
-        </li>
-        <li>
-            ANCORARE MOZZO ELICA A TERRA CHECK 
-            <button class="button" onclick="markAsCompleted(this, 'parcheggio')">Completato</button>
-        </li>
-        <li>
-            METTERE TELO DI COPERTURA CHECK 
-            <button class="button" onclick="markAsCompleted(this, 'parcheggio')">Completato</button>
-        </li>
-    </ul>
-    <a class="button" href="#sezioni">Torna all'Indice</a>
-    <button class="button reset-button" onclick="resetSection('parcheggio')">Azzera</button>
-    <div class="section-footer" style="text-align: left; margin-top: 20px; font-size: 14px; color: #555;">Creato ed ideato da GJS</div>
-</div>
-<div class="section" id="emergenza">
-    <h2 class="section-title" id="emergenza-title" style="
-            color: white; 
-            text-align: center; 
-            background-color: red; 
-            padding: 10px; 
-            border-radius: 5px; 
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">
-            PROCEDURE DI EMERGENZA
-        </h2>
-    <ul id="emergenza-list" style="list-style: none; padding: 0; text-align: center;">
-        <li style="margin: 10px 0;">
-            <a class="button" href="#avaria-motore-quota" style="
-                            display: inline-block; 
-                            color: white; 
-                            background-color: red; 
-                            padding: 10px 20px; 
-                            border-radius: 5px; 
-                            text-decoration: none; 
-                            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
-                            font-weight: bold;">
-                            AVARIA MOTORE IN QUOTA
-                        </a>
-        </li>
-        <li style="margin: 10px 0;">
-            <a class="button" href="#avaria-motore-decollo" style="
-                            display: inline-block; 
-                            color: white; 
-                            background-color: red; 
-                            padding: 10px 20px; 
-                            border-radius: 5px; 
-                            text-decoration: none; 
-                            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
-                            font-weight: bold;">
-                            AVARIA MOTORE IN DECOLLO
-                        </a>
-        </li>
-        <li style="margin: 10px 0;">
-            <a class="button" href="#vite-intenzionale" style="
-                            display: inline-block; 
-                            color: white; 
-                            background-color: red; 
-                            padding: 10px 20px; 
-                            border-radius: 5px; 
-                            text-decoration: none; 
-                            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
-                            font-weight: bold;">
-                            VITE INTENZIONALE
-                        </a>
-        </li>
-        <li style="margin: 10px 0;">
-            <a class="button" href="#incendio-motore" style="
-                            display: inline-block; 
-                            color: white; 
-                            background-color: red; 
-                            padding: 10px 20px; 
-                            border-radius: 5px; 
-                            text-decoration: none; 
-                            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
-                            font-weight: bold;">
-                            INCENDIO AL MOTORE
-                        </a>
-        </li>
-        <li style="margin: 10px 0;">
-            <a class="button" href="#incendio-elettrico" style="
-                            display: inline-block; 
-                            color: white; 
-                            background-color: red; 
-                            padding: 10px 20px; 
-                            border-radius: 5px; 
-                            text-decoration: none; 
-                            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
-                            font-weight: bold;">
-                            INCENDIO IMPIANTO ELETTRICO
-                        </a>
-        </li>
-        <li style="margin: 10px 0;">
-            <a class="button" href="#utilizzo-paracadute" style="
-                            display: inline-block; 
-                            color: white; 
-                            background-color: red; 
-                            padding: 10px 20px; 
-                            border-radius: 5px; 
-                            text-decoration: none; 
-                            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
-                            font-weight: bold;">
-                            UTILIZZO PARACADUTE
-                        </a>
-        </li>
-        <li style="margin: 10px 0;">
-            <a class="button" href="#flutter" style="
-                            display: inline-block; 
-                            color: white; 
-                            background-color: red; 
-                            padding: 10px 20px; 
-                            border-radius: 5px; 
-                            text-decoration: none; 
-                            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
-                            font-weight: bold;">
-                            FLUTTER
-                        </a>
-        </li>
-        <li style="margin: 10px 0;">
-            <a class="button" href="#ghiaccio-carburatore" style="
-                            display: inline-block; 
-                            color: white; 
-                            background-color: red; 
-                            padding: 10px 20px; 
-                            border-radius: 5px; 
-                            text-decoration: none; 
-                            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
-                            font-weight: bold;">
-                            GHIACCIO AL CARBURATORE
-                        </a>
-        </li>
-        <li style="margin: 10px 0;">
-            <a class="button" href="#avaria-carburante" style="
-                            display: inline-block; 
-                            color: white; 
-                            background-color: red; 
-                            padding: 10px 20px; 
-                            border-radius: 5px; 
-                            text-decoration: none; 
-                            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
-                            font-weight: bold;">
-                            AVARIA IMPIANTO CARBURANTE
-                        </a>
-        </li>
-        <li style="margin: 10px 0;">
-            <a class="button" href="#superamento-vne" style="
-                            display: inline-block; 
-                            color: white; 
-                            background-color: red; 
-                            padding: 10px 20px; 
-                            border-radius: 5px; 
-                            text-decoration: none; 
-                            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
-                            font-weight: bold;">
-                            SUPERAMENTO VNE
-                        </a>
-        </li>
-        <li style="margin: 10px 0;">
-            <a class="button" href="#guasto-carrello" style="
-                            display: inline-block; 
-                            color: white; 
-                            background-color: red; 
-                            padding: 10px 20px; 
-                            border-radius: 5px; 
-                            text-decoration: none; 
-                            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
-                            font-weight: bold;">
-                            GUASTO AL CARRELLO
-                        </a>
-        </li>
-        <li style="margin: 10px 0;">
-            <a class="button" href="#avaria-elettrico" style="
-                            display: inline-block; 
-                            color: white; 
-                            background-color: red; 
-                            padding: 10px 20px; 
-                            border-radius: 5px; 
-                            text-decoration: none; 
-                            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
-                            font-weight: bold;">
-                            AVARIA IMPIANTO ELETTRICO
-                        </a>
-        </li>
-    </ul>
-    <a class="button" href="#sezioni" style="
-            display: inline-block; 
-            margin-top: 20px; 
-            color: white; 
-            background-color: #007bff; 
-            padding: 10px 20px; 
-            border-radius: 5px; 
-            text-decoration: none; 
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);">
-            Torna all'Indice
-        </a>
-</div>
-<!-- Sottosezioni -->
-<div class="subsection" id="avaria-motore-quota">
-    <h3 style="color: red; text-align: center; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">AVARIA MOTORE IN QUOTA</h3>
-    <ul id="avaria-motore-quota-list" style="list-style: none; padding: 0; text-align: left;">
-        <li style="margin: 10px 0;">
-            VEFF. MAX 110 KM/H 
-            <button class="button" onclick="markAsCompleted(this, 'avaria-motore-quota')">Completato</button>
-        </li>
-        <li style="margin: 10px 0;">
-            FLAP COME NECESSARIO 
-            <button class="button" onclick="markAsCompleted(this, 'avaria-motore-quota')">Completato</button>
-        </li>
-        <li style="margin: 10px 0;">
-            LUOGO ATTERRAGGIO SCEGLIERE 
-            <button class="button" onclick="markAsCompleted(this, 'avaria-motore-quota')">Completato</button>
-        </li>
-        <li style="margin: 10px 0;">
-            SE QUOTA SUFFICIENTE TENTATIVO DI RIAVVIO 
-            <button class="button" onclick="markAsCompleted(this, 'avaria-motore-quota')">Completato</button>
-        </li>
-        <li style="margin: 10px 0;">
-            RUBINETTI BENZINA APERTI 
-            <button class="button" onclick="markAsCompleted(this, 'avaria-motore-quota')">Completato</button>
-        </li>
-        <li style="margin: 10px 0;">
-            LIVELLO BENZINA CHECK 
-            <button class="button" onclick="markAsCompleted(this, 'avaria-motore-quota')">Completato</button>
-        </li>
-        <li style="margin: 10px 0;">
-            POMPA BENZINA ON 
-            <button class="button" onclick="markAsCompleted(this, 'avaria-motore-quota')">Completato</button>
-        </li>
-        <li style="margin: 10px 0;">
-            MAGNETI DX + SX ON 
-            <button class="button" onclick="markAsCompleted(this, 'avaria-motore-quota')">Completato</button>
-        </li>
-        <li style="margin: 10px 0;">
-            SE IL MOTORE NON SI RIAVVIA 
-            <button class="button" onclick="markAsCompleted(this, 'avaria-motore-quota')">Completato</button>
-        </li>
-        <li style="margin: 10px 0;">
-            RUBINETTI BENZINA OFF 
-            <button class="button" onclick="markAsCompleted(this, 'avaria-motore-quota')">Completato</button>
-        </li>
-        <li style="margin: 10px 0;">
-            MAGNETI DX + SX OFF 
-            <button class="button" onclick="markAsCompleted(this, 'avaria-motore-quota')">Completato</button>
-        </li>
-        <li style="margin: 10px 0;">
-            CHIAVE MASTER OFF 
-            <button class="button" onclick="markAsCompleted(this, 'avaria-motore-quota')">Completato</button>
-        </li>
-        <li style="margin: 10px 0;">
-            SBLOCCARE PORTIERE SE OPPORTUNO 
-            <button class="button" onclick="markAsCompleted(this, 'avaria-motore-quota')">Completato</button>
-        </li>
-        <li style="margin: 10px 0;">
-            ATTERRARE 
-            <button class="button" onclick="markAsCompleted(this, 'avaria-motore-quota')">Completato</button>
-        </li>
-        <li style="margin: 10px 0;">
-            ALLONTANARSI DALL'AEREO 
-            <button class="button" onclick="markAsCompleted(this, 'avaria-motore-quota')">Completato</button>
-        </li>
-    </ul>
-    <a class="button" href="#emergenza" style="
-            display: inline-block; 
-            margin-top: 20px; 
-            color: white; 
-            background-color: #007bff; 
-            padding: 10px 20px; 
-            border-radius: 5px; 
-            text-decoration: none; 
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);">
-            Torna al Menu Emergenza
-        </a>
-</div>
-<div class="subsection" id="avaria-motore-decollo">
-    <h3 style="color: red; text-align: center; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">AVARIA MOTORE IN DECOLLO</h3>
-    <ul id="avaria-motore-decollo-list" style="list-style: none; padding: 0; text-align: left;">
-        <li style="margin: 10px 0;">
-            LIVELLARE 
-            <button class="button" onclick="markAsCompleted(this, 'avaria-motore-decollo')">Completato</button>
-        </li>
-        <li style="margin: 10px 0;">
-            VELOCITÀ 90 KM/H 
-            <button class="button" onclick="markAsCompleted(this, 'avaria-motore-decollo')">Completato</button>
-        </li>
-        <li style="margin: 10px 0;">
-            LUOGO ATTERRAGGIO SCEGLIERE 
-            <button class="button" onclick="markAsCompleted(this, 'avaria-motore-decollo')">Completato</button>
-        </li>
-        <li style="margin: 10px 0;">
-            MANETTA MINIMO 
-            <button class="button" onclick="markAsCompleted(this, 'avaria-motore-decollo')">Completato</button>
-        </li>
-        <li style="margin: 10px 0;">
-            RUBINETTI BENZINA OFF 
-            <button class="button" onclick="markAsCompleted(this, 'avaria-motore-decollo')">Completato</button>
-        </li>
-        <li style="margin: 10px 0;">
-            MAGNETI DX + SX OFF 
-            <button class="button" onclick="markAsCompleted(this, 'avaria-motore-decollo')">Completato</button>
-        </li>
-        <li style="margin: 10px 0;">
-            MASTER OFF 
-            <button class="button" onclick="markAsCompleted(this, 'avaria-motore-decollo')">Completato</button>
-        </li>
-        <li style="margin: 10px 0;">
-            ATTERRARE 
-            <button class="button" onclick="markAsCompleted(this, 'avaria-motore-decollo')">Completato</button>
-        </li>
-        <li style="margin: 10px 0;">
-            ALLONTANARSI DALL'AEREO 
-            <button class="button" onclick="markAsCompleted(this, 'avaria-motore-decollo')">Completato</button>
-        </li>
-    </ul>
-    <a class="button" href="#emergenza" style="
-            display: inline-block; 
-            margin-top: 20px; 
-            color: white; 
-            background-color: #007bff; 
-            padding: 10px 20px; 
-            border-radius: 5px; 
-            text-decoration: none; 
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);">
-            Torna al Menu Emergenza
-        </a>
-</div>
-<div class="subsection" id="vite-intenzionale">
-    <h3 style="color: red; text-align: center; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">VITE INTENZIONALE</h3>
-    <ul id="vite-intenzionale-list" style="list-style: none; padding: 0; text-align: left;">
-        <li style="margin: 10px 0;">
-            MANETTA MINIMO 
-            <button class="button" onclick="markAsCompleted(this, 'vite-intenzionale')">Completato</button>
-        </li>
-        <li style="margin: 10px 0;">
-            ALETTONI CENTRATI 
-            <button class="button" onclick="markAsCompleted(this, 'vite-intenzionale')">Completato</button>
-        </li>
-        <li style="margin: 10px 0;">
-            PIEDE CONTRARIO ALLA ROTAZIONE COME NECESSARIO 
-            <button class="button" onclick="markAsCompleted(this, 'vite-intenzionale')">Completato</button>
-        </li>
-        <li style="margin: 10px 0;">
-            CLOCHE AVANTI 
-            <button class="button" onclick="markAsCompleted(this, 'vite-intenzionale')">Completato</button>
-        </li>
-        <li style="margin: 10px 0;">
-            FINITA LA ROTAZIONE 
-            <button class="button" onclick="markAsCompleted(this, 'vite-intenzionale')">Completato</button>
-        </li>
-        <li style="margin: 10px 0;">
-            PEDALIERA AL CENTRO 
-            <button class="button" onclick="markAsCompleted(this, 'vite-intenzionale')">Completato</button>
-        </li>
-        <li style="margin: 10px 0;">
-            CLOCHE RICHIAMARE 
-            <button class="button" onclick="markAsCompleted(this, 'vite-intenzionale')">Completato</button>
-        </li>
-        <li style="margin: 10px 0;">
-            MANETTA COME NECESSARIO 
-            <button class="button" onclick="markAsCompleted(this, 'vite-intenzionale')">Completato</button>
-        </li>
-    </ul>
-    <a class="button" href="#emergenza" style="
-            display: inline-block; 
-            margin-top: 20px; 
-            color: white; 
-            background-color: #007bff; 
-            padding: 10px 20px; 
-            border-radius: 5px; 
-            text-decoration: none; 
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);">
-            Torna al Menu Emergenza
-        </a>
-</div>
-<div class="subsection" id="incendio-motore">
-    <h3 style="color: red; text-align: center; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">INCENDIO AL MOTORE</h3>
-    <ul id="incendio-motore-list" style="list-style: none; padding: 0; text-align: center;">
-        <li style="margin: 10px 0;">
-            RUBINETTI BENZINA OFF 
-            <button class="button" onclick="markAsCompleted(this, 'incendio-motore')">Completato</button>
-        </li>
-        <li style="margin: 10px 0;">
-            MANETTA ACCELERARE TUTTO 
-            <button class="button" onclick="markAsCompleted(this, 'incendio-motore')">Completato</button>
-        </li>
-        <li style="margin: 10px 0;">
-            QUANDO MOTORE OFF 
-            <button class="button" onclick="markAsCompleted(this, 'incendio-motore')">Completato</button>
-        </li>
-        <li style="margin: 10px 0;">
-            MAGNETI DX + SX OFF 
-            <button class="button" onclick="markAsCompleted(this, 'incendio-motore')">Completato</button>
-        </li>
-        <li style="margin: 10px 0;">
-            PORTIERE APERTE 
-            <button class="button" onclick="markAsCompleted(this, 'incendio-motore')">Completato</button>
-        </li>
-        <li style="margin: 10px 0;">
-            ATTERRARE 
-            <button class="button" onclick="markAsCompleted(this, 'incendio-motore')">Completato</button>
-        </li>
-        <li style="margin: 10px 0;">
-            ALLONTANARSI DALL'AEREO 
-            <button class="button" onclick="markAsCompleted(this, 'incendio-motore')">Completato</button>
-        </li>
-    </ul>
-    <a class="button" href="#emergenza" style="
-            display: inline-block; 
-            margin-top: 20px; 
-            color: white; 
-            background-color: #007bff; 
-            padding: 10px 20px; 
-            border-radius: 5px; 
-            text-decoration: none; 
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);">
-            Torna al Menu Emergenza
-        </a>
-</div>
-<div class="subsection" id="incendio-elettrico">
-    <h3 style="color: red; text-align: center;">INCENDIO IMPIANTO ELETTRICO</h3>
-    <ul>
-        <li>
-            MAGNETI DX + SX OFF
-            <button class="button" onclick="markAsCompleted(this, 'incendio-elettrico')">Completato</button>
-        </li>
-        <li>
-            CHIAVE MASTER OFF
-            <button class="button" onclick="markAsCompleted(this, 'incendio-elettrico')">Completato</button>
-        </li>
-        <li>
-            VELOCITÀ 120 KM/H
-            <button class="button" onclick="markAsCompleted(this, 'incendio-elettrico')">Completato</button>
-        </li>
-        <li>
-            PORTIERE APERTE
-            <button class="button" onclick="markAsCompleted(this, 'incendio-elettrico')">Completato</button>
-        </li>
-        <li>
-            ATTERRARE
-            <button class="button" onclick="markAsCompleted(this, 'incendio-elettrico')">Completato</button>
-        </li>
-    </ul>
-    <a class="button" href="#emergenza">Torna al Menu Emergenza</a>
-</div>
-<div class="subsection" id="utilizzo-paracadute">
-    <h3 style="color: red; text-align: center;">UTILIZZO PARACADUTE</h3>
-    <ul>
-        <li>
-            MAGNETI DX + SX OFF
-            <button class="button" onclick="markAsCompleted(this, 'utilizzo-paracadute')">Completato</button>
-        </li>
-        <li>
-            CHIAVE MASTER OFF
-            <button class="button" onclick="markAsCompleted(this, 'utilizzo-paracadute')">Completato</button>
-        </li>
-        <li>
-            VELOCITÀ 100 KM/H
-            <button class="button" onclick="markAsCompleted(this, 'utilizzo-paracadute')">Completato</button>
-        </li>
-        <li>
-            PARACADUTE APRIRE
-            <button class="button" onclick="markAsCompleted(this, 'utilizzo-paracadute')">Completato</button>
-        </li>
-        <li>
-            RUBINETTI BENZINA CHIUDERE
-            <button class="button" onclick="markAsCompleted(this, 'utilizzo-paracadute')">Completato</button>
-        </li>
-        <li>
-            PORTIERE APRIRE
-            <button class="button" onclick="markAsCompleted(this, 'utilizzo-paracadute')">Completato</button>
-        </li>
-        <li>
-            CINTURE STRINGERE
-            <button class="button" onclick="markAsCompleted(this, 'utilizzo-paracadute')">Completato</button>
-        </li>
-    </ul>
-    <a class="button" href="#emergenza">Torna al Menu Emergenza</a>
-</div>
-<div class="subsection" id="flutter">
-    <h3 style="color: red; text-align: center;">FLUTTER</h3>
-    <ul>
-        <li>
-            MANETTA RIDURRE
-            <button class="button" onclick="markAsCompleted(this, 'flutter')">Completato</button>
-        </li>
-        <li>
-            CLOCHE CABRARE
-            <button class="button" onclick="markAsCompleted(this, 'flutter')">Completato</button>
-        </li>
-    </ul>
-    <a class="button" href="#emergenza">Torna al Menu Emergenza</a>
-</div>
-<div class="subsection" id="ghiaccio-carburatore">
-    <h3 style="color: red; text-align: center;">GHIACCIO AL CARBURATORE</h3>
-    <ul>
-        <li>
-            MANETTA AUMENTARE E RIDURRE PIÙ VOLTE
-            <button class="button" onclick="markAsCompleted(this, 'ghiaccio-carburatore')">Completato</button>
-        </li>
-    </ul>
-    <a class="button" href="#emergenza">Torna al Menu Emergenza</a>
-</div>
-<div class="subsection" id="avaria-carburante">
-    <h3 style="color: red; text-align: center;">AVARIA IMPIANTO CARBURANTE</h3>
-    <ul>
-        <li>
-            RUBINETTI BENZINA OFF
-            <button class="button" onclick="markAsCompleted(this, 'avaria-carburante')">Completato</button>
-        </li>
-        <li>
-            MAGNETI DX + SX OFF
-            <button class="button" onclick="markAsCompleted(this, 'avaria-carburante')">Completato</button>
-        </li>
-        <li>
-            ATTERRARE
-            <button class="button" onclick="markAsCompleted(this, 'avaria-carburante')">Completato</button>
-        </li>
-        <li>
-            ALLONTANARSI DALL'AEREO
-            <button class="button" onclick="markAsCompleted(this, 'avaria-carburante')">Completato</button>
-        </li>
-    </ul>
-    <a class="button" href="#emergenza">Torna al Menu Emergenza</a>
-</div>
-<div class="subsection" id="superamento-vne">
-    <h3 style="color: red; text-align: center;">SUPERAMENTO VNE</h3>
-    <ul>
-        <li>
-            ATTERRARE
-            <button class="button" onclick="markAsCompleted(this, 'superamento-vne')">Completato</button>
-        </li>
-        <li>
-            FAR ISPEZIONARE L'AEREO DA PERSONALE QUALIFICATO
-            <button class="button" onclick="markAsCompleted(this, 'superamento-vne')">Completato</button>
-        </li>
-    </ul>
-    <a class="button" href="#emergenza">Torna al Menu Emergenza</a>
-</div>
-<div class="subsection" id="guasto-carrello">
-    <h3 style="color: red; text-align: center;">GUASTO AL CARRELLO</h3>
-    <ul>
-        <li>
-            ATTERRARE SULLA GAMBA EFFICIENTE
-            <button class="button" onclick="markAsCompleted(this, 'guasto-carrello')">Completato</button>
-        </li>
-        <li>
-            CLOCHE VERSO LA GAMBA EFFICIENTE
-            <button class="button" onclick="markAsCompleted(this, 'guasto-carrello')">Completato</button>
-        </li>
-    </ul>
-    <a class="button" href="#emergenza">Torna al Menu Emergenza</a>
-</div>
-<div class="subsection" id="avaria-elettrico">
-    <h3 style="color: red; text-align: center;">AVARIA IMPIANTO ELETTRICO</h3>
-    <ul>
-        <li>
-            SPIA GENERATORE ON
-            <button class="button" onclick="markAsCompleted(this, 'avaria-elettrico')">Completato</button>
-        </li>
-        <li>
-            CHIAVE MASTER OFF
-            <button class="button" onclick="markAsCompleted(this, 'avaria-elettrico')">Completato</button>
-        </li>
-        <li>
-            ATTERRARE
-            <button class="button" onclick="markAsCompleted(this, 'avaria-elettrico')">Completato</button>
-        </li>
-    </ul>
-    <a class="button" href="#emergenza">Torna al Menu Emergenza</a>
-</div>
