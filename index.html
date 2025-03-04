@@ -316,16 +316,7 @@
 </style>
 </head>
 <body>
-    <div id="login">
-        <h1>Inserisci la password</h1>
-        <div id="login-container">
-            <input type="password" id="password" placeholder="Password">
-            <i class="fas fa-eye-slash" id="togglePassword"></i>
-        </div>
-        <button onclick="checkPassword()">Accedi</button>
-    </div>
-
-    <div id="content" style="display:none;">
+    <div id="content" >
         <!-- Copertina -->
         <div class="cover">
             <div class="cover-title">CHECK-LIST COAVIO DF 2000 EOLO</div>
@@ -1876,49 +1867,6 @@
         </div>
     </div>
 
-    <script>
-        document.getElementById('password').addEventListener('keypress', function (e) {
-            if (e.key === 'Enter') {
-                checkPassword();
-            }
-        });
-
-
-        function checkPassword() {
-            const password = document.getElementById('password').value;
-            if (password === 'forzanapoli') { // Sostituisci 'tua_password' con la tua password
-                // Salva la password in localStorage
-                localStorage.setItem('savedPassword', password);
-                document.getElementById('login').style.display = 'none';
-                document.getElementById('content').style.display = 'block';
-            } else {
-                alert('Password errata!');
-            }
-        }
-
-        // Verifica se la password è già stata salvata in localStorage al caricamento della pagina
-        document.addEventListener('DOMContentLoaded', () => {
-            const savedPassword = localStorage.getItem('savedPassword');
-            if (savedPassword === 'password_sicura') { // Sostituisci 'tua_password' con la tua password
-                document.getElementById('login').style.display = 'none';
-                document.getElementById('content').style.display = 'block';
-            }
-        });
-    </script>
-    <script>
-        const togglePassword = document.getElementById('togglePassword');
-        const passwordInput = document.getElementById('password');
-
-        togglePassword.addEventListener('click', function () {
-            // Cambia il tipo di input tra password e text
-            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-            passwordInput.setAttribute('type', type);
-
-            // Cambia l'icona
-            this.classList.toggle('fa-eye-slash');
-            this.classList.toggle('fa-eye');
-        });
-    </script>
     <script>
 function markAsCompleted(button, sectionId) {
     const task = button.parentElement;
