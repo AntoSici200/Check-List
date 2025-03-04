@@ -1887,12 +1887,23 @@
         function checkPassword() {
             const password = document.getElementById('password').value;
             if (password === 'forzanapoli') { // Sostituisci 'tua_password' con la tua password
+                // Salva la password in localStorage
+                localStorage.setItem('savedPassword', password);
                 document.getElementById('login').style.display = 'none';
                 document.getElementById('content').style.display = 'block';
             } else {
                 alert('Password errata!');
             }
         }
+
+        // Verifica se la password è già stata salvata in localStorage al caricamento della pagina
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedPassword = localStorage.getItem('savedPassword');
+            if (savedPassword === 'password_sicura') { // Sostituisci 'tua_password' con la tua password
+                document.getElementById('login').style.display = 'none';
+                document.getElementById('content').style.display = 'block';
+            }
+        });
     </script>
     <script>
         const togglePassword = document.getElementById('togglePassword');
