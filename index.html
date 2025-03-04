@@ -7,6 +7,7 @@
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Checklist Interattiva COAVIO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
 
         #emergenza-list {
@@ -220,6 +221,63 @@
         box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
         z-index: 1000;
     }
+    /* Stili CSS per la sezione di login migliorata */
+    #login {
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    #login h1 {
+        margin-bottom: 20px; /* Spazio sotto il titolo */
+    }
+
+    #login input {
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 200px;
+        padding-right: 35px; /* Spazio per l'icona */
+    }
+
+    #login button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 5px;
+    }
+
+    #login button:hover {
+        background-color: #0056b3;
+    }
+
+    #preview {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        display: none;
+    }
+    #login-container {
+        position: relative; /* Contenitore per posizionamento relativo */
+        display: inline-block; /* Per far sì che il contenitore si adatti al contenuto */
+    }
+
+    #togglePassword {
+        position: absolute; /* Posizionamento assoluto rispetto a #login-container */
+        right: 10px; /* Spazio dal bordo destro */
+        top: 50%; /* Centra verticalmente */
+        transform: translateY(-50%); /* Regola il centraggio verticale */
+        cursor: pointer; /* Cambia il cursore in "pointer" al passaggio del mouse */
+        color: #888; /* Colore dell'icona (grigio chiaro) */
+    }
+
+
     </style>
 
     <style>
@@ -260,7 +318,10 @@
 <body>
     <div id="login">
         <h1>Inserisci la password</h1>
-        <input type="password" id="password" placeholder="Password">
+        <div id="login-container">
+            <input type="password" id="password" placeholder="Password">
+            <i class="fas fa-eye-slash" id="togglePassword"></i>
+        </div>
         <button onclick="checkPassword()">Accedi</button>
     </div>
 
@@ -1816,15 +1877,36 @@
     </div>
 
     <script>
+        document.getElementById('password').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                checkPassword();
+            }
+        });
+
+
         function checkPassword() {
             const password = document.getElementById('password').value;
-            if (password === 'Diavolirossi25.') { // Replace 'tua_password' with your desired password
+            if (password === 'tua_password') { // Sostituisci 'tua_password' con la tua password
                 document.getElementById('login').style.display = 'none';
                 document.getElementById('content').style.display = 'block';
             } else {
                 alert('Password errata!');
             }
         }
+    </script>
+    <script>
+        const togglePassword = document.getElementById('togglePassword');
+        const passwordInput = document.getElementById('password');
+
+        togglePassword.addEventListener('click', function () {
+            // Cambia il tipo di input tra password e text
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+
+            // Cambia l'icona
+            this.classList.toggle('fa-eye-slash');
+            this.classList.toggle('fa-eye');
+        });
     </script>
     <script>
 function markAsCompleted(button, sectionId) {
